@@ -1,0 +1,8 @@
+/*[ STRUCTURE GÉNÉRALE DE LA PAGE ]*/
+/* ------------------------------------------------------------ */
+.interface {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
