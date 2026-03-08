@@ -1,0 +1,92 @@
+/* FOOTER */
+
+.footer {
+    background: var(--gris-fonce);
+    color: var(--texte-couleur-blanc);
+    padding: var(--espace-grand) var(--espace-moyen);
+}
+
+.footer-contenu {
+    max-width: 360px;
+    margin: auto;
+    text-align: center;
+}
+
+/* IMAGE */
+
+.footer-image {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-image img {
+    width: 50%;
+    border-radius: var(--rayon);
+    margin-bottom: var(--espace-moyen);
+}
+
+/* LIGNE */
+
+.footer-ligne {
+    height: 2px;
+    background: var(--blanc-casse);
+    opacity: 0.4;
+    margin: var(--espace-grand) 0;
+}
+
+/* HEURES */
+
+.footer-heures h3 {
+    font-size: var(--texte-grand);
+    margin-bottom: var(--espace-moyen);
+}
+
+.footer-heures p {
+    font-size: var(--texte-normal);
+    margin-bottom: var(--espace-petit);
+}
+
+/* INFOLETTRE */
+
+.footer-newsletter h3 {
+    font-size: var(--texte-grand);
+    margin-bottom: var(--espace-moyen);
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: var(--espace-petit);
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border-radius: var(--rayon);
+    border: none;
+    width: 180px;
+    border: 2px solid white;
+}
+
+.newsletter-form button {
+    padding: 10px 16px;
+    border-radius: var(--rayon);
+    background: var(--boutton-couleur);
+    color: white;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background: var(--boutton-couleur-hover);
+}
+
+/* BAS FOOTER */
+
+.footer-bas {
+    margin-top: var(--espace-grand);
+    font-size: var(--texte-xs);
+    opacity: 0.8;
+}
+
+.footer-liens {
+    margin-top: var(--espace-petit);
+}
