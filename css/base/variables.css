@@ -25,4 +25,12 @@
     --espace-petit: 8px;
     --espace-moyen: 16px;
     --espace-grand: 32px;
+
+    /*[ TYPOGRAPHIE ]*/
+    --texte-xs: 12px;
+    --texte-petit: 14px;
+    --texte-normal: 16px;
+    --texte-moyen: 20px;
+    --texte-grand: 24px;
+    --texte-titre: 32px;
 }
