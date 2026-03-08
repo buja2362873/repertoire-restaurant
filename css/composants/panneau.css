@@ -1,32 +1,51 @@
+/* ------------------------------------------------ */
+/* PANNEAU DE NAVIGATION */
+/* ------------------------------------------------ */
+
 .nav-menu{
-    height: 100%;
-    width: 0;
     position: fixed;
-    z-index: 10;
     top: 0;
     left: 0;
-    background-color: var(--gris-fonce);
-    overflow-x: hidden;
-    transition: 0.6s;
-    padding-top: 100px;
+    width: 100%;
+    height: 0;
+    background: var(--blanc-casse);
+    overflow-y: auto;
+    transition: height 0.6s ease;
+    z-index: 100;
 }
 
 .nav-menu ul{
     list-style: none;
     text-align: center;
+    margin-top: 80px;
+    padding: 0;
+}
+
+.nav-menu li{
+    margin: 14px 0;
 }
 
 .nav-menu a{
-    color: white;
-    font-size: 24px;
     text-decoration: none;
+    font-size: var(--texte-moyen);
+    color: var(--gris-fonce);
     display: block;
-    margin: 20px 0;
+    transition: color 0.3s ease, opacity 0.4s ease;
 }
 
 .nav-menu li a{
     opacity: 0;
-    transition: opacity 0.4s ease;
+}
+
+.nav-titre{
+    font-size: var(--texte-titre);
+    font-weight: bold;
+    margin-top: 40px;
+    color: var(--gris-fonce);
+}
+
+.nav-menu a:hover{
+    color: var(--rose-fonce);
 }
 
 .fadeMenu{
@@ -35,7 +54,16 @@
 
 .nav-close{
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 40px;
+    left: 20px;
     font-size: 40px;
+    cursor: pointer;
+    color: var(--texte-couleur-noir);
+    z-index: 10;
+    transition: 0.2s;
+}
+
+.nav-close:hover{
+    color: var(--rose-pale);
+    transform: scale(1.1);
 }

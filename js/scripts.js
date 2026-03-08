@@ -12,14 +12,14 @@ const liensNav = document.querySelectorAll('#nav--primary li a');
 // Description : Gestion de l'ouverture du panneau et dévoilement des options
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function openNav() {
-    panneauNavigation.style.width = "100%";
+    panneauNavigation.style.height = "100%";
 
-    setTimeout(()=>{
+    setTimeout(() => {
         for (const lien of liensNav) {
             lien.style.opacity = 1;
             lien.classList.remove('fadeMenu');
         }
-    },800);
+    }, 800);
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -32,9 +32,9 @@ function closeNav() {
         lien.classList.add('fadeMenu');
     }
 
-    setTimeout(()=>{
-        panneauNavigation.style.width = "0%";
-    },600);
+    setTimeout(() => {
+        panneauNavigation.style.height = "0%";
+    }, 600);
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -43,10 +43,39 @@ function closeNav() {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function redirection(event) {
     event.preventDefault();
-    const url = event.target.getAttribute('href'); 
+    const url = event.target.getAttribute('href');
     closeNav();
-    
-    setTimeout(()=>{
+
+    setTimeout(() => {
         window.location.href = url;
-    },980);
+    }, 980);
 }
+
+const menuToggle = document.querySelector('#menu-toggle');
+const navClose = document.querySelector('#nav-close');
+let menuOuvert = false;
+
+liensNav.forEach(lien => lien.addEventListener('click', redirection));
+
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        if (menuOuvert) {
+            closeNav();
+            menuToggle.textContent = "menu";
+            menuOuvert = false;
+        }
+    });
+}
+
+menuToggle.addEventListener('click', () => {
+    if (menuOuvert) {
+        closeNav();
+        menuToggle.textContent = "menu";
+        menuOuvert = false;
+    } else {
+        openNav();
+        menuToggle.textContent = "close";
+        menuOuvert = true;
+    }
+});
+

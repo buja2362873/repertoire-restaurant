@@ -12,15 +12,28 @@
 <body>
     <nav id="nav--primary" class="nav-menu">
 
-        <a href="javascript:void(0)" class="nav-close" onclick="closeNav()">
-            &times;
-        </a>
+        <span id="nav-close" class="material-symbols-outlined nav-close">close</span>
 
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Réservations</a></li>
-            <li><a href="#">Contact</a></li>
+
+            <li class="nav-titre">Nourriture</li>
+            <li><a href="#">Table d'hôte</a></li>
+            <li><a href="#">Menu 7 services</a></li>
+            <li><a href="#">Entrées</a></li>
+            <li><a href="#">Plats</a></li>
+            <li><a href="#">Desserts</a></li>
+
+            <li class="nav-titre">Cave à vin</li>
+            <li><a href="#">Saké et shoshu</a></li>
+            <li><a href="#">Vin blanc</a></li>
+            <li><a href="#">Vin rouge</a></li>
+            <li><a href="#">Bières et sake</a></li>
+
+            <li class="nav-titre">Le restaurant</li>
+            <li><a href="#">L'histoire</a></li>
+            <li><a href="#">Le chef</a></li>
+            <li><a href="#">La galerie</a></li>
+
         </ul>
 
     </nav>
@@ -28,13 +41,10 @@
 
     <header class="hero">
 
-        <!-- Menu -->
-        <span class="material-symbols-outlined menu-icon" onclick="openNav()">
+        <span id="menu-toggle" class="material-symbols-outlined menu-icon">
             menu
         </span>
 
-
-        <!-- Vidéo -->
         <video autoplay muted loop playsinline class="hero-video">
             <source src="assets/video/video_test.mov" type="video/mp4">
         </video>
