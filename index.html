@@ -10,11 +10,26 @@
 </head>
 
 <body>
+    <nav id="nav--primary" class="nav-menu">
+
+        <a href="javascript:void(0)" class="nav-close" onclick="closeNav()">
+            &times;
+        </a>
+
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Réservations</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+    </nav>
+
 
     <header class="hero">
 
         <!-- Menu -->
-        <span class="material-symbols-outlined menu-icon">
+        <span class="material-symbols-outlined menu-icon" onclick="openNav()">
             menu
         </span>
 
@@ -102,6 +117,9 @@
         </div>
 
     </footer>
+
+    <script src="js/scripts.js"></script>
+
 </body>
 
 </html>
