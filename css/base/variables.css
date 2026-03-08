@@ -1,7 +1,28 @@
 /*[ VARIABLES DU PROJET ]*/
 /* ------------------------------------------------------------ */
-:root{
-    /*[ COULEURS ]*/
-    --blanc:#fff;
-    --noir : #000;
+:root {
+    /*[ COULEURS PRINCIPALES ]*/
+    --blanc-casse: #f2f0ef;
+    --gris-fonce: #161412;
+    --bleu-nuit: #00313F;
+    --bleu-pale: #00738E;
+
+    /*[ COULEURS ACCENT ]*/
+    --rose-fonce: #C3017E;
+    --rose-pale: #FF28B9;
+    --cyan: #00DADB;
+
+    /*[ TEXTE ]*/
+    --texte-couleur-blanc: #ffffff;
+    --texte-couleur-noir: #000000;
+
+    /*[ BOUTON ]*/
+    --boutton-couleur: #C3017E;
+    --boutton-couleur-hover: #FF28B9;
+
+    /*[ UI ]*/
+    --rayon: 8px;
+    --espace-petit: 8px;
+    --espace-moyen: 16px;
+    --espace-grand: 32px;
 }
