@@ -2,7 +2,7 @@
 /* PANNEAU DE NAVIGATION */
 /* ------------------------------------------------ */
 
-.nav-menu{
+.nav-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,56 +14,57 @@
     z-index: 100;
 }
 
-.nav-menu ul{
+.nav-menu ul {
     list-style: none;
     text-align: center;
     margin-top: 80px;
     padding: 0;
 }
 
-.nav-menu li{
+.nav-menu li {
     margin: 14px 0;
 }
 
-.nav-menu a{
+.nav-menu a {
     text-decoration: none;
     font-size: var(--texte-moyen);
     color: var(--gris-fonce);
     display: block;
-    transition: color 0.3s ease, opacity 0.4s ease;
 }
 
-.nav-menu li a{
+.nav-menu li a {
     opacity: 0;
 }
 
-.nav-titre{
+.nav-titre {
     font-size: var(--texte-titre);
     font-weight: bold;
     margin-top: 40px;
     color: var(--gris-fonce);
 }
 
-.nav-menu a:hover{
-    color: var(--rose-fonce);
+.nav-menu li a:hover {
+    color: var(--blanc-casse);
+    background-color: var(--rose-fonce);
+    transform: scale(1.1);
 }
 
-.fadeMenu{
+.fadeMenu {
     opacity: 0;
 }
 
-.nav-close{
+.nav-close {
     position: absolute;
     top: 40px;
     left: 20px;
-    font-size: 40px;
+    transform: scale(1.5);
     cursor: pointer;
     color: var(--texte-couleur-noir);
     z-index: 10;
     transition: 0.2s;
 }
 
-.nav-close:hover{
+.nav-close:hover {
     color: var(--rose-pale);
-    transform: scale(1.1);
+    transform: scale(2);
 }
