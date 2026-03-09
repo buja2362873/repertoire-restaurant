@@ -1,4 +1,4 @@
-body{
+.page-404{
     background: var(--gris-fonce);
     color: var(--texte-couleur-blanc);
     display: flex;
@@ -6,7 +6,6 @@ body{
     align-items: center;
     height: 100vh;
     text-align: center;
-    font-family: sans-serif;
 }
 
 .erreur-container{
