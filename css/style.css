@@ -8,6 +8,7 @@
 @import url('composants/header.css');
 @import url('composants/footer.css');
 @import url('composants/panneau.css');
+@import url('composants/erreur.css');
 
 /*[ importation du dossier layout ]*/
 @import url('layout/structure.css');
