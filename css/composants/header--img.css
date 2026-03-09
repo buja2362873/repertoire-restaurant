@@ -1,0 +1,19 @@
+/*[ COMPOSANT HEADER--IMG ]*/
+/* ------------------------------------------------------------ */
+
+#img--background{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    object-fit: cover;
+
+    @media (min-width: 680px){
+        display: none;
+    }
+}

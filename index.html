@@ -39,15 +39,26 @@
     </nav>
 
 
-    <header class="hero">
+    <header class="video">
 
         <span id="menu-toggle" class="material-symbols-outlined menu-icon">
             menu
         </span>
 
-        <video autoplay muted loop playsinline class="hero-video">
+        <!-- <video autoplay muted loop playsinline class="hero-video">
             <source src="assets/video/video_test.mov" type="video/mp4">
+        </video> -->
+
+        <!-- seulement >=680px -->
+        <video width="320" height="240" autoplay muted loop id="video--background">
+            <source src="assets/video/video_test.mov" type="video/mp4">
+            <!-- <source src="assets/video/velo.webm" type="video/webm"> -->
+            Votre naviguateur ne supporte pas les vidéos HTML5.
         </video>
+
+        <!-- seulement <680px -->
+
+        <img id="img--background" src="assets/images/avif/image_prototype.avif" alt="Arrière-plan" />
 
     </header>
 

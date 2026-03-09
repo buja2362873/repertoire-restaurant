@@ -1,0 +1,19 @@
+
+/* VIDEO */
+
+#video--background{
+    display: none;
+
+    @media (min-width: 680px){
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        object-fit: cover;
+    }
+}
