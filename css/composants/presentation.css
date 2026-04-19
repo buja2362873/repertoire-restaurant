@@ -25,6 +25,7 @@
 
 .chef-image img {
     width: 80%;
+    max-width: 720px;
 }
 
 .btn-accomplissements {
