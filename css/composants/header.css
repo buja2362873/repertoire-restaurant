@@ -49,7 +49,7 @@
 }
 
 .specialites h2 {
-    font-size: var(--texte-grand);
+    font-size: var(--texte-titre);
     margin-bottom: var(--espace-grand);
     color: var(--bleu-pale);
 }
@@ -82,7 +82,7 @@
 
 .card:hover {
     transform: scale(1.08);
-    box-shadow: 0 10px 25px rgba(253, 39, 186, 0.3);
+    box-shadow: 0 0px 25px rgba(253, 39, 186, 0.3);
     border-color: var(--rose-pale);
 }
 
@@ -126,7 +126,7 @@
 
 .btn-menu {
     margin-top: var(--espace-grand);
-    background: var(--gris-fonce);
+    background: var(--cyan);
     color: var(--texte-couleur-blanc);
     font-size: var(--texte-normal);
     border: none;
@@ -136,5 +136,7 @@
 }
 
 .btn-menu:hover {
-    background: var(--boutton-couleur);
+    transform: scale(1.08);
+    box-shadow: 0 0px 25px var(--cyan);
+    border-color: var(--rose-pale);
 }
