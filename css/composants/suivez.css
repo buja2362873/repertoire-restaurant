@@ -24,11 +24,11 @@
 
 .video-container iframe{
     width: 100%;
-    max-width: 720px; 
+    max-width: var(--largeur-max-video); 
     aspect-ratio: 16 / 9;
     border-radius: var(--rayon);
 
-    box-shadow: 0 0 20px rgba(33, 221, 222, 0.3);
+    box-shadow: 0 0 15px var(--cyan);
 }
 
 .reseaux{
@@ -41,10 +41,10 @@
     background: var(--gris-fonce);
     color: var(--texte-couleur-blanc);
     border: none;
-    padding: 10px;
+    padding: var(--espacement-petit);
     border-radius: var(--rayon);
     cursor: pointer;
-    max-width: 720px; 
+    max-width: var(--largeur-max-video); 
 
     transition: 0.3s;
 }

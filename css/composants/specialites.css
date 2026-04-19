@@ -23,15 +23,15 @@
 }
 
 .card {
-    width: 120px;
-    height: 140px;
+    width: var(--largeur-carte);
+    height: var(--hauteur-carte);
     background: var(--mauve);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: var(--rayon);
-    border: 2px solid var(--rose-fonce);
+    border: var(--epaisseur-bordure) solid var(--rose-fonce);
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -40,21 +40,21 @@
 
 .card:hover {
     transform: scale(1.08);
-    box-shadow: 0 0px 25px rgba(253, 39, 186, 0.3);
+    box-shadow: 0 0px 25px var(--rose-pale);
     border-color: var(--rose-pale);
 }
 
 .card p {
     font-size: var(--texte-petit);
-    margin-bottom: 6px;
+    margin-bottom: var(--espacement-tres-petit);
     color: var(--texte-couleur-blanc);
 }
 
 .ligne {
-    width: 50px;
-    height: 4px;
+    width: var(--largeur-ligne);
+    height: var(--hauteur-icone);
     background: var(--blanc-casse);
-    margin-bottom: 12px;
+    margin-bottom: var(--espacement-petit);
 }
 
 .card i {
@@ -62,20 +62,20 @@
 }
 
 .icon-sushi {
-    width: 48px;
-    height: 48px;
+    width: var(--largeur-icone);
+    height: var(--largeur-icone);
     filter: brightness(0) invert(1);
 }
 
 .icon-grill {
-    width: 48px;
-    height: 48px;
+    width: var(--largeur-icone);
+    height: var(--largeur-icone);
     filter: brightness(0) invert(1);
 }
 
 .icon-vin {
-    width: 48px;
-    height: 48px;
+    width: var(--largeur-icone);
+    height: var(--largeur-icone);
     filter: brightness(0) invert(1);
 }
 
@@ -88,7 +88,7 @@
     color: var(--texte-couleur-blanc);
     font-size: var(--texte-normal);
     border: none;
-    padding: 10px 30px;
+    padding: var(--espacement-petit) var(--espacement-grand);
     border-radius: var(--rayon);
     cursor: pointer;
 }

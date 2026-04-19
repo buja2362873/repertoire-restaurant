@@ -4,34 +4,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: var(--hauteur-pleine);
     text-align: center;
 }
 
 .erreur-container{
-    max-width: 400px;
+    max-width: var(--largeur-max-section);
 }
 
 .erreur-code{
-    font-size: 80px;
+    font-size: var(--taille-police-erreur);
     font-weight: bold;
     color: var(--rose-fonce);
 }
 
 .erreur-titre{
     font-size: var(--texte-titre);
-    margin: 20px 0;
+    margin: var(--espacement-moyen) 0;
 }
 
 .erreur-texte{
     font-size: var(--texte-normal);
-    margin-bottom: 30px;
+    margin-bottom: var(--espacement-grand);
 }
 
 .btn-retour{
     background: var(--boutton-couleur);
     color: white;
-    padding: 12px 24px;
+    padding: var(--espacement-petit) var(--espacement-grand);
     border-radius: var(--rayon);
     text-decoration: none;
     transition: 0.3s;

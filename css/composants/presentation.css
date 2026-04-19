@@ -24,8 +24,8 @@
 }
 
 .chef-image img {
-    width: 80%;
-    max-width: 720px;
+    width: var(--pourcentage-largeur);
+    max-width: var(--largeur-max-video);
 }
 
 .btn-accomplissements {
@@ -34,7 +34,7 @@
     color: var(--texte-couleur-blanc);
     font-size: var(--texte-normal);
     border: none;
-    padding: 10px 30px;
+    padding: var(--espacement-petit) var(--espacement-grand);
     border-radius: var(--rayon);
     cursor: pointer;
 }

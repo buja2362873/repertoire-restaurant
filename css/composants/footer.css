@@ -7,7 +7,7 @@
 }
 
 .footer-contenu {
-    max-width: 360px;
+    max-width: var(--largeur-max-conteneur);
     margin: auto;
     text-align: center;
 }
@@ -20,14 +20,14 @@
 }
 
 .footer-image img {
-    width: 80%;
+    width: var(--pourcentage-largeur);
     margin-bottom: var(--espace-petit);
 }
 
 /* LIGNE */
 
 .footer-ligne {
-    height: 2px;
+    height: var(--epaisseur-ligne);
     background: var(--blanc-casse);
     opacity: 0.4;
     margin: var(--espace-moyen) 0;
@@ -59,15 +59,15 @@
 }
 
 .newsletter-form input {
-    padding: 10px;
+    padding: var(--espacement-petit);
     border-radius: var(--rayon);
     border: none;
-    width: 180px;
-    border: 2px solid white;
+    width: var(--largeur-input);
+    border: var(--epaisseur-bordure) solid white;
 }
 
 .newsletter-form button {
-    padding: 10px 16px;
+    padding: var(--espacement-petit) var(--espacement-petit);
     border-radius: var(--rayon);
     background: var(--boutton-couleur);
     color: white;

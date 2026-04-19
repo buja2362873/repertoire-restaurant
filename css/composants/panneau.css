@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 0;
+    height: var(--hauteur-zero);
     background: var(--mauve);
     overflow: hidden;
     display: flex;
@@ -15,7 +15,7 @@
 }
 
 .nav-menu.open{
-    height: 100vh;
+    height: var(--hauteur-pleine);
 }
 
 /* Liste */
@@ -34,11 +34,11 @@
 .nav-menu a{
     position: relative;
     text-decoration: none;
-    font-size: 2.2rem;
+    font-size: var(--taille-police-menu);
     font-weight: 600;
     color: var(--texte-couleur-blanc);
-    letter-spacing: 1px;
-    padding: 20px;
+    letter-spacing: var(--espacement-lettre);
+    padding: var(--espacement-moyen);
     display: inline-block;
 
     opacity: 0;
@@ -61,7 +61,7 @@
     left: 50%;
     bottom: 0;
     width: 0%;
-    height: 2px;
+    height: var(--epaisseur-ligne);
     background: var(--rose-fonce);
     transition: 0.3s ease;
     transform: translateX(-50%);
@@ -80,9 +80,9 @@
 
 .nav-close{
     position: absolute;
-    top: 50px;
-    left: 30px;
-    scale: 3;
+    top: var(--largeur-ligne);
+    left: var(--espacement-grand);
+    scale: var(--echelle-icon);
     cursor: pointer;
     color: var(--texte-couleur-blanc);
     transition: 0.2s;
@@ -90,5 +90,5 @@
 
 .nav-close:hover{
     color: var(--rose-fonce);
-    transform: rotate(90deg) scale(1.1);
+    transform: rotate(var(--rotation-fermeture)) scale(var(--echelle-hover));
 }

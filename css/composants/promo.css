@@ -6,17 +6,17 @@
 }
 
 .promo-image{
-    width: 80px;
-    height: 80px;
+    width: var(--taille-police-erreur);
+    height: var(--taille-police-erreur);
     margin: 0 auto var(--espace-moyen);
     background: var(--bleu-pale);
     border-radius: var(--rayon);
 
-    box-shadow: 0 0 20px var(--bleu-pale);
+    box-shadow: 0 0 15px var(--bleu-pale);
 }
 
 .promo h2{
-    font-size: 36px;
+    font-size: var(--taille-police-titre-special);
     font-weight: bold;
     color: var(--rose-fonce);
 }

@@ -7,7 +7,7 @@
 .hero {
     position: relative;
     width: 100%;
-    height: 760px;
+    height: var(--hauteur-hero);
     overflow: hidden;
     background: var(--bleu-pale);
 }
@@ -24,9 +24,9 @@
 
 .menu-icon {
     position: absolute;
-    top: 50px;
-    left: 30px;
-    scale: 3;
+    top: var(--largeur-ligne);
+    left: var(--espacement-grand);
+    scale: var(--echelle-icon);
     color: var(--texte-couleur-blanc);
     cursor: pointer;
     z-index: 10;
@@ -34,7 +34,7 @@
 
 .menu-icon:hover {
     color: var(--rose-fonce);
-    transform: scale(1.1);
+    transform: scale(var(--echelle-hover));
     transition: 0.2s;
 }
 
