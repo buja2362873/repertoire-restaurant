@@ -9,6 +9,12 @@
 @import url('composants/footer.css');
 @import url('composants/panneau.css');
 @import url('composants/erreur.css');
+@import url('composants/specialites.css');
+@import url('composants/chef.css');
+@import url('composants/localisation.css');
+@import url('composants/rabais.css');
+@import url('composants/reseaux.css');
+
 
 /*[ importation du dossier layout ]*/
 @import url('layout/structure.css');
