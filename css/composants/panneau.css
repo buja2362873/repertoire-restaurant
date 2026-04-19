@@ -55,7 +55,7 @@
     transform: translateY(0);
 }
 
-/* Effet ligne élégante */
+/* Effet de ligne */
 .nav-menu a::after{
     content: "";
     position: absolute;

@@ -29,11 +29,11 @@
     scale: 3;
     color: var(--texte-couleur-blanc);
     cursor: pointer;
-    z-index:10;
+    z-index: 10;
 }
 
 .menu-icon:hover {
-    color: var(--rose-pale);
+    color: var(--rose-fonce);
     transform: scale(1.1);
     transition: 0.2s;
 }
@@ -73,6 +73,17 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--rayon);
+    border: 2px solid var(--rose-fonce);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(253, 39, 186, 0.3);
+    border-color: var(--rose-pale);
 }
 
 .card p {

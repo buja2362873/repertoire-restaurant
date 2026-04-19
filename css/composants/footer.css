@@ -20,9 +20,8 @@
 }
 
 .footer-image img {
-    width: 50%;
-    border-radius: var(--rayon);
-    margin-bottom: var(--espace-moyen);
+    width: 80%;
+    margin-bottom: var(--espace-petit);
 }
 
 /* LIGNE */
@@ -31,14 +30,14 @@
     height: 2px;
     background: var(--blanc-casse);
     opacity: 0.4;
-    margin: var(--espace-grand) 0;
+    margin: var(--espace-moyen) 0;
 }
 
 /* HEURES */
 
 .footer-heures h3 {
     font-size: var(--texte-grand);
-    margin-bottom: var(--espace-moyen);
+    margin-bottom: var(--espace-grand);
 }
 
 .footer-heures p {
@@ -50,7 +49,7 @@
 
 .footer-newsletter h3 {
     font-size: var(--texte-grand);
-    margin-bottom: var(--espace-moyen);
+    margin-bottom: var(--espace-grand);
 }
 
 .newsletter-form {
@@ -76,7 +75,9 @@
 }
 
 .newsletter-form button:hover {
-    background: var(--boutton-couleur-hover);
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(253, 39, 186, 0.3);
+    border-color: var(--rose-pale);
 }
 
 /* BAS FOOTER */
