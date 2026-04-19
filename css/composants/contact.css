@@ -10,14 +10,14 @@
     margin-bottom: var(--espace-moyen);
 }
 
-.map-placeholder{
+.map-container {
     width: 100%;
-    height: 200px;
+    max-width: 720px;
+    margin: 0 auto var(--espace-moyen) auto; 
     background: var(--bleu-pale);
     border-radius: var(--rayon);
-    margin-bottom: var(--espace-moyen);
-
-    box-shadow: 0 0 15px var(--bleu-pale)
+    box-shadow: 0 0 15px var(--bleu-pale);
+    overflow: hidden; 
 }
 
 .contact-info{
