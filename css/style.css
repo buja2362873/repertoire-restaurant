@@ -10,10 +10,10 @@
 @import url('composants/panneau.css');
 @import url('composants/erreur.css');
 @import url('composants/specialites.css');
-@import url('composants/chef.css');
-@import url('composants/localisation.css');
-@import url('composants/rabais.css');
-@import url('composants/reseaux.css');
+@import url('composants/presentation.css');
+@import url('composants/suivez.css');
+@import url('composants/promo.css');
+@import url('composants/contact.css');
 
 
 /*[ importation du dossier layout ]*/

@@ -1,0 +1,45 @@
+.presentation{
+    text-align: center;
+    padding: var(--espace-grand);
+    background: var(--gris-fonce);
+    color: var(--texte-couleur-blanc);
+}
+
+.presentation h2{
+    font-size: var(--texte-titre);
+    color: var(--rose-fonce);
+    margin-bottom: var(--espace-moyen);
+}
+
+.presentation-texte{
+    font-size: var(--texte-normal);
+    line-height: 1.6;
+    color: var(--blanc-casse);
+    margin-bottom: var(--espace-grand);
+}
+
+.chef-image {
+    display: flex;
+    justify-content: center;
+}
+
+.chef-image img {
+    width: 80%;
+}
+
+.btn-accomplissements {
+    margin-top: var(--espace-grand);
+    background: var(--rose-fonce);
+    color: var(--texte-couleur-blanc);
+    font-size: var(--texte-normal);
+    border: none;
+    padding: 10px 30px;
+    border-radius: var(--rayon);
+    cursor: pointer;
+}
+
+.btn-accomplissements:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0px 25px var(--rose-pale);
+    border-color: var(--rose-pale);
+}
