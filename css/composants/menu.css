@@ -50,3 +50,15 @@
     box-shadow: 0 0 20px var(--rose-fonce);
     border-color: var(--rose-pale);
 }
+
+.menu-categorie{
+    margin-bottom: var(--espace-grand);
+}
+
+.categorie-titre{
+    color: var(--cyan);
+    margin-bottom: var(--espace-moyen);
+    border-left: 3px solid var(--rose-fonce);
+    padding-left: 10px;
+    font-size: var(--texte-grand);
+}
