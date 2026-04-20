@@ -34,24 +34,21 @@
     }
 }
 
-/* Small devices (tablets, 576px and up) */
 @media (min-width: 576px) {
     .menu-icon {
-        scale: 2.5; /* Slightly smaller scale */
+        scale: 2.5; 
     }
 }
 
-/* Medium devices (desktops, 768px and up) */
 @media (min-width: 768px) {
     .menu-icon {
-        scale: 2; /* Even smaller */
+        scale: 2; 
     }
 }
 
-/* Large devices (large desktops, 992px and up) */
 @media (min-width: 992px) {
     .menu-icon {
-        scale: 1.5; /* Normal size */
+        scale: 1.5; 
     }
 }
 
@@ -69,7 +66,7 @@
 }
 
 .menu-icon:hover {
-    color: var(--rose-fonce);
+    color: var(--rose-pale);
     transform: scale(var(--echelle-hover));
     transition: 0.2s;
 }
