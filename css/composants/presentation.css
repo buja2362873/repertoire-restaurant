@@ -1,17 +1,34 @@
-.presentation{
+.presentation {
+    position: relative;
+    /* IMPORTANT */
     text-align: center;
     padding: var(--espace-grand);
     background: var(--gris-fonce);
     color: var(--texte-couleur-blanc);
+    overflow: hidden;
 }
 
-.presentation h2{
+/* Texture */
+.presentation::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 245, 255, 0.015) 2px,
+            rgba(0, 245, 255, 0.015) 4px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.presentation h2 {
     font-size: var(--texte-titre);
     color: var(--rose-fonce);
     margin-bottom: var(--espace-moyen);
 }
 
-.presentation-texte{
+.presentation-texte {
     font-size: var(--texte-normal);
     line-height: 1.6;
     color: var(--blanc-casse);
@@ -50,11 +67,13 @@
 /* Small devices (tablets, 576px and up) */
 @media (min-width: 576px) {
     .presentation h2 {
-        font-size: 2.5rem; /* Larger title */
+        font-size: 2.5rem;
+        /* Larger title */
     }
 
     .presentation-texte {
-        font-size: 1.1rem; /* Slightly larger text */
+        font-size: 1.1rem;
+        /* Slightly larger text */
     }
 }
 
@@ -65,7 +84,8 @@
     }
 
     .chef-image img {
-        max-width: 600px; /* Larger image */
+        max-width: 600px;
+        /* Larger image */
     }
 }
 

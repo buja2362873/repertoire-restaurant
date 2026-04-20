@@ -1,11 +1,26 @@
-.promo{
+.promo {
+    position: relative;
     text-align: center;
     padding: var(--espace-grand);
     background: var(--gris-fonce);
     color: var(--texte-couleur-blanc);
+    overflow: hidden;
 }
 
-.promo-image{
+.promo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 245, 255, 0.015) 2px,
+            rgba(0, 245, 255, 0.015) 4px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.promo-image {
     width: var(--taille-police-erreur);
     height: var(--taille-police-erreur);
     margin: 0 auto var(--espace-moyen);
@@ -15,13 +30,13 @@
     box-shadow: 0 0 15px var(--bleu-pale);
 }
 
-.promo h2{
+.promo h2 {
     font-size: var(--taille-police-titre-special);
     font-weight: bold;
     color: var(--rose-fonce);
 }
 
-.promo p{
+.promo p {
     color: var(--blanc-casse);
 }
 
