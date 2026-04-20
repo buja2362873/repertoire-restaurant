@@ -56,7 +56,7 @@
 }
 
 .categorie-titre{
-    color: var(--cyan);
+    color: var(--bleu-pale);
     margin-bottom: var(--espace-moyen);
     border-left: 3px solid var(--rose-fonce);
     padding-left: 10px;
