@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-/* ------------------------------------------------ */
-/* PANNEAU DE NAVIGATION */
-/* ------------------------------------------------ */
-
-.nav-menu {
-=======
 /* Conteneur */
 .nav-menu{
->>>>>>> beta
     position: fixed;
     top: 0;
     left: 0;
@@ -22,27 +14,6 @@
     z-index: 100;
 }
 
-<<<<<<< HEAD
-.nav-menu ul {
-    list-style: none;
-    text-align: center;
-    margin-top: 80px;
-    padding: 0;
-}
-
-.nav-menu li {
-    margin: 14px 0;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    font-size: var(--texte-moyen);
-    color: var(--gris-fonce);
-    display: block;
-}
-
-.nav-menu li a {
-=======
 .nav-menu.open{
     height: var(--hauteur-pleine);
 }
@@ -70,7 +41,6 @@
     padding: var(--espacement-moyen);
     display: inline-block;
 
->>>>>>> beta
     opacity: 0;
     transition: 
         opacity 0.4s ease,
@@ -78,30 +48,6 @@
         color 0.3s ease;
 }
 
-<<<<<<< HEAD
-.nav-titre {
-    font-size: var(--texte-titre);
-    font-weight: bold;
-    margin-top: 40px;
-    color: var(--gris-fonce);
-}
-
-.nav-menu li a:hover {
-    color: var(--blanc-casse);
-    background-color: var(--rose-fonce);
-    transform: scale(1.1);
-}
-
-.fadeMenu {
-    opacity: 0;
-}
-
-.nav-close {
-    position: absolute;
-    top: 40px;
-    left: 20px;
-    transform: scale(1.5);
-=======
 /* Animation apparition */
 .nav-menu.open a{
     opacity: 1;
@@ -137,17 +83,11 @@
     top: var(--largeur-ligne);
     left: var(--espacement-grand);
     scale: var(--echelle-icon);
->>>>>>> beta
     cursor: pointer;
     color: var(--texte-couleur-blanc);
     transition: 0.2s;
 }
 
-<<<<<<< HEAD
-.nav-close:hover {
-    color: var(--rose-pale);
-    transform: scale(2);
-=======
 .nav-close:hover{
     color: var(--rose-fonce);
     transform: rotate(var(--rotation-fermeture)) scale(var(--echelle-hover));
@@ -186,5 +126,4 @@
     .nav-menu li {
         margin: 50px 0;
     }
->>>>>>> beta
 }

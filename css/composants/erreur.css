@@ -39,9 +39,6 @@
 
 .btn-retour:hover{
     background: var(--boutton-couleur-hover);
-<<<<<<< HEAD
-    transform: scale(1.5);
-=======
 }
 
 /* MEDIA QUERIES */
@@ -81,5 +78,4 @@
     .erreur-titre {
         font-size: 3rem;
     }
->>>>>>> beta
 }

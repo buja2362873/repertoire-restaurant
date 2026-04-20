@@ -9,11 +9,6 @@
 @import url('composants/footer.css');
 @import url('composants/panneau.css');
 @import url('composants/erreur.css');
-<<<<<<< HEAD
-@import url('composants/header--img.css');
-@import url('composants/header--video.css');
-@import url('composants/specialites.css');
-=======
 @import url('composants/specialites.css');
 @import url('composants/presentation.css');
 @import url('composants/suivez.css');
@@ -22,7 +17,6 @@
 @import url('composants/menu.css');
 @import url('composants/desserts.css');
 
->>>>>>> beta
 
 /*[ importation du dossier layout ]*/
 @import url('layout/structure.css');

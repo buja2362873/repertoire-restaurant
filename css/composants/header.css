@@ -2,14 +2,6 @@
 /* ------------------------------------------------------------ */
 /* ------------------------------------------------------------ */
 
-<<<<<<< HEAD
-header{
-    position: relative;
-    height: 100vh;
-    min-height: 700px;
-}
-
-=======
 /* VIDEO cachée par défaut */
 #hero-video {
     display: none;
@@ -61,34 +53,20 @@ header{
 }
 
 
->>>>>>> beta
 /* MENU */
 
 .menu-icon {
     position: absolute;
-<<<<<<< HEAD
-    top: 40px;
-    left: 20px;
-    color: var(--texte-couleur-noir);
-    cursor: pointer;
-    z-index:10;
-    transform: scale(1.5);
-=======
     top: var(--largeur-ligne);
     left: var(--espacement-grand);
     scale: var(--echelle-icon);
     color: var(--texte-couleur-blanc);
     cursor: pointer;
     z-index: 10;
->>>>>>> beta
 }
 
 .menu-icon:hover {
     color: var(--rose-pale);
-<<<<<<< HEAD
-    transform: scale(2);
-    transition: 0.2s;
-=======
     transform: scale(var(--echelle-hover));
     transition: 0.2s;
 }
@@ -98,5 +76,4 @@ header{
     width: 100%;
     height: 100vh;
     overflow: hidden;
->>>>>>> beta
 }

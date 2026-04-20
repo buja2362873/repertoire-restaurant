@@ -1,38 +1,3 @@
-<<<<<<< HEAD
-/* SECTION SPECIALITES */
-
-.specialites {
-    text-align: center;
-    padding: var(--espace-grand);
-    background: var(--blanc-casse);
-}
-
-.specialites h2 {
-    font-size: var(--texte-grand);
-    margin-bottom: var(--espace-grand);
-    color: var(--gris-fonce);
-}
-
-
-/* CARDS */
-
-.cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--espace-grand);
-}
-
-.card:hover {
-    background: var(--bleu-pale);
-    transform: scale(1.1);
-    transition: 0.2s;
-}
-.card {
-    width: 120px;
-    height: 140px;
-    background: var(--bleu-nuit);
-=======
 .specialites {
     text-align: center;
     padding: var(--espace-grand);
@@ -105,28 +70,10 @@
     max-width: var(--largeur-carte);
     min-height: var(--hauteur-carte);
     background: var(--mauve);
->>>>>>> beta
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    border-radius: var(--rayon);
-}
-
-
-.card p {
-    font-size: var(--texte-petit);
-    margin-bottom: 6px;
-    color: var(--texte-couleur-blanc);
-}
-
-.ligne {
-    width: 50px;
-    height: 4px;
-    background: var(--blanc-casse);
-    margin-bottom: 12px;
-=======
     padding: var(--espace-moyen);
     border-radius: var(--rayon);
     border: var(--epaisseur-bordure) solid var(--rose-fonce);
@@ -151,52 +98,12 @@
     height: var(--hauteur-icone);
     background: var(--blanc-casse);
     margin-bottom: var(--espacement-petit);
->>>>>>> beta
 }
 
 .card i {
     font-size: var(--texte-grand);
 }
 
-<<<<<<< HEAD
-.icon-sushi {
-    width: 48px;
-    height: 48px;
-    filter: brightness(0) invert(1);
-}
-
-.icon-grill {
-    width: 48px;
-    height: 48px;
-    filter: brightness(0) invert(1);
-}
-
-.icon-vin {
-    width: 48px;
-    height: 48px;
-    filter: brightness(0) invert(1);
-}
-
-
-/* BOUTON */
-
-.btn-menu {
-    margin-top: var(--espace-grand);
-    background: var(--rose-fonce);
-    color: var(--texte-couleur-blanc);
-    font-size: var(--texte-normal);
-    border: none;
-    padding: 10px 30px;
-    border-radius: var(--rayon);
-    cursor: pointer;
-}
-
-.btn-menu:hover {
-    background: var(--rose-pale);
-    transform: scale(1.1);
-}
-
-=======
 .icon-sushi,
 .icon-grill,
 .icon-vin {
@@ -222,4 +129,3 @@
     box-shadow: 0 0px 25px var(--cyan);
     border-color: var(--cyan);
 }
->>>>>>> beta
