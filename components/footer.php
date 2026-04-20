@@ -3,7 +3,9 @@
     <div class="footer-contenu">
 
         <div class="footer-image">
-            <img src="assets/images/png/1_logo.png" alt="Restaurant">
+            <a href="index.php">
+                <img src="assets/images/png/1_logo.png" alt="Restaurant">
+            </a>
         </div>
 
         <div class="footer-ligne"></div>
