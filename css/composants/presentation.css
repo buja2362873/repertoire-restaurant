@@ -19,7 +19,7 @@
             rgba(0, 245, 255, 0.015) 2px,
             rgba(0, 245, 255, 0.015) 4px);
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
 }
 
 .presentation h2 {
@@ -47,19 +47,37 @@
 
 .btn-accomplissements {
     margin-top: var(--espace-grand);
-    background: var(--rose-fonce);
-    color: var(--texte-couleur-blanc);
+    position: relative;
+    background: transparent;
+    color: var(--rose-fonce);
     font-size: var(--texte-normal);
-    border: none;
+    letter-spacing: 0.15em;
+    border: var(--epaisseur-bordure) solid var(--rose-fonce);
     padding: var(--espacement-petit) var(--espacement-grand);
-    border-radius: var(--rayon);
     cursor: pointer;
+    overflow: hidden;
+    transition: color 0.35s ease, box-shadow 0.3s ease;
+}
+
+.btn-accomplissements::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--rose-fonce);
+    transform: scaleX(0);
+    transform-origin: upper right;
+    transition: transform 0.35s ease;
+    z-index: -1;
+}
+
+.btn-accomplissements:hover::before {
+    transform: scaleX(1);
 }
 
 .btn-accomplissements:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0px 25px var(--rose-pale);
-    border-color: var(--rose-pale);
+    color: var(--texte-couleur-blanc);
+    box-shadow: 0 0 25px var(--rose-fonce);
+    z-index: 1;
 }
 
 /* MEDIA QUERIES */
