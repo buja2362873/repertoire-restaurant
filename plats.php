@@ -1,36 +1,24 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+$showImg = false;
+?>
+
 <!DOCTYPE html>
 <html lang="EN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=360, initial-scale=1.0">
-    <title>Entrées - Izakaya Hiroshi</title>
+    <title>Plats - Izakaya Hiroshi</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/entrees.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body>
 
-    <!-- NAV -->
-    <nav id="nav--primary" class="nav-menu">
-        <span id="nav-close" class="material-symbols-outlined nav-close">close</span>
-        <ul>
-            <li><a href="entrees.html">Entrées</a></li>
-            <li><a href="plats.html">Plats</a></li>
-            <li><a href="desserts.html">Desserts</a></li>
-            <li><a href="vins.html">Cave à vin</a></li>
-        </ul>
-    </nav>
+    <?php include 'components/menu.php'; ?>
 
-    <!-- HEADER -->
-    <header class="hero">
-        <span id="menu-toggle" class="material-symbols-outlined menu-icon">menu</span>
-
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="assets/video/video_restaurant_optimise.mp4" type="video/mp4">
-        </video>
-    </header>
+    <?php include 'components/header.php'; ?>
 
     <main class="menu-section">
 
@@ -155,44 +143,7 @@
 
     </main>
 
-    <!-- FOOTER (identique) -->
-    <footer class="footer">
-        <div class="footer-contenu">
-
-            <div class="footer-image">
-                <img src="assets/images/png/1_logo.png" alt="Restaurant">
-            </div>
-
-            <div class="footer-ligne"></div>
-
-            <div class="footer-heures">
-                <h3>Heure d'ouverture</h3>
-                <p><strong>Lun – Jeu :</strong> 17h – 22h</p>
-                <p><strong>Ven – Sam :</strong> 17h – 23h</p>
-                <p><strong>Dim :</strong> Fermé</p>
-            </div>
-
-            <div class="footer-ligne"></div>
-
-            <div class="footer-newsletter">
-                <h3>Infolettre</h3>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Adresse courriel">
-                    <button>OK</button>
-                </div>
-            </div>
-
-            <div class="footer-bas">
-                <p>© 2026 Hizakaya Hiroshi • Tous droits réservés</p>
-                <p class="footer-liens">
-                    <a href="index.html">• Accueil</a>
-                    <a href="#">• Réservations</a>
-                    <a href="#">• Politique de confidentialité</a>
-                </p>
-            </div>
-
-        </div>
-    </footer>
+    <?php include 'components/footer.php'; ?>
 
     <script src="js/scripts.js"></script>
 

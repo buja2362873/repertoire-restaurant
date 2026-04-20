@@ -23,7 +23,7 @@
             Ce plat n'est pas au menu.
         </p>
 
-        <a href="index.html" class="btn-retour">Retour à l'accueil</a>
+        <a href="index.php" class="btn-retour">Retour à l'accueil</a>
 
     </div>
 
