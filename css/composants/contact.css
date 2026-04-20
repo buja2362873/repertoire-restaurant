@@ -1,36 +1,39 @@
-.contact{
+.contact {
     padding: var(--espace-grand);
     background: var(--bleu-nuit);
     color: var(--texte-couleur-blanc);
     text-align: center;
 }
 
-.contact h2{
-    color: var(--bleu-pale);
-    margin-bottom: var(--espace-moyen);
+.contact h2 {
+    font-size: var(--texte-titre);
+    margin-bottom: var(--espace-grand);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--bleu-pale);
+    text-transform: uppercase;
 }
 
 .map-container {
     width: 100%;
     max-width: var(--largeur-max-video);
-    margin: 0 auto var(--espace-moyen) auto; 
+    margin: 0 auto var(--espace-moyen) auto;
     background: var(--bleu-pale);
     border-radius: var(--rayon);
     box-shadow: 0 0 15px var(--bleu-pale);
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-.contact-info{
+.contact-info {
     border-top: var(--epaisseur-ligne) solid var(--blanc-casse);
     padding-top: var(--espace-moyen);
 }
 
-.contact-info h3{
+.contact-info h3 {
     margin-bottom: var(--espace-petit);
     color: var(--rose-fonce);
 }
 
-.contact-info p{
+.contact-info p {
     margin: var(--espacement-tres-petit) 0;
     color: var(--blanc-casse);
 }

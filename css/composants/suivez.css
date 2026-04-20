@@ -7,7 +7,10 @@
 
 .suivez-nous h2{
     font-size: var(--texte-titre);
-    color: var(--bleu-pale);
+    margin-bottom: var(--espace-grand);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--bleu-pale);
+    text-transform: uppercase;
 }
 
 .suivez-nous p{

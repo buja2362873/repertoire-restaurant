@@ -26,9 +26,9 @@
 
 .specialites h2 {
     font-size: var(--texte-titre);
-    margin-bottom: 0.5rem;
-    color: var(--bleu-pale);
-    letter-spacing: 0.12em;
+    margin-bottom: var(--espace-grand);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--bleu-pale);
     text-transform: uppercase;
 }
 
