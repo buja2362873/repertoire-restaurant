@@ -7,7 +7,7 @@
 }
 
 .footer-contenu {
-    max-width: 360px;
+    max-width: var(--largeur-max-conteneur);
     margin: auto;
     text-align: center;
 }
@@ -20,25 +20,24 @@
 }
 
 .footer-image img {
-    width: 50%;
-    border-radius: var(--rayon);
-    margin-bottom: var(--espace-moyen);
+    width: var(--pourcentage-largeur);
+    margin-bottom: var(--espace-petit);
 }
 
 /* LIGNE */
 
 .footer-ligne {
-    height: 2px;
+    height: var(--epaisseur-ligne);
     background: var(--blanc-casse);
     opacity: 0.4;
-    margin: var(--espace-grand) 0;
+    margin: var(--espace-moyen) 0;
 }
 
 /* HEURES */
 
 .footer-heures h3 {
     font-size: var(--texte-grand);
-    margin-bottom: var(--espace-moyen);
+    margin-bottom: var(--espace-grand);
 }
 
 .footer-heures p {
@@ -50,7 +49,7 @@
 
 .footer-newsletter h3 {
     font-size: var(--texte-grand);
-    margin-bottom: var(--espace-moyen);
+    margin-bottom: var(--espace-grand);
 }
 
 .newsletter-form {
@@ -60,15 +59,15 @@
 }
 
 .newsletter-form input {
-    padding: 10px;
+    padding: var(--espacement-petit);
     border-radius: var(--rayon);
     border: none;
-    width: 180px;
-    border: 2px solid white;
+    width: var(--largeur-input);
+    border: var(--epaisseur-bordure) solid white;
 }
 
 .newsletter-form button {
-    padding: 10px 16px;
+    padding: var(--espacement-petit) var(--espacement-petit);
     border-radius: var(--rayon);
     background: var(--boutton-couleur);
     color: white;
@@ -76,8 +75,14 @@
 }
 
 .newsletter-form button:hover {
+<<<<<<< HEAD
     background: var(--boutton-couleur-hover);
     transform: scale(1.1);
+=======
+    transform: scale(1.08);
+    box-shadow: 0 0px 25px var(--rose-pale);
+    border-color: var(--rose-pale);
+>>>>>>> beta
 }
 
 /* BAS FOOTER */
@@ -90,4 +95,37 @@
 
 .footer-liens {
     margin-top: var(--espace-petit);
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .newsletter-form input {
+        width: 250px; 
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .footer-contenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-form input {
+        width: 300px;
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .footer-contenu {
+        max-width: 300px; 
+    }
+
+    .newsletter-form input {
+        width: 300px; 
+    }
 }

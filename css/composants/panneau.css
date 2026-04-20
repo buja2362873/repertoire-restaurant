@@ -1,19 +1,28 @@
+<<<<<<< HEAD
 /* ------------------------------------------------ */
 /* PANNEAU DE NAVIGATION */
 /* ------------------------------------------------ */
 
 .nav-menu {
+=======
+/* Conteneur */
+.nav-menu{
+>>>>>>> beta
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 0;
-    background: var(--blanc-casse);
-    overflow-y: auto;
-    transition: height 0.6s ease;
+    height: var(--hauteur-zero);
+    background: var(--mauve);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.5s ease;
     z-index: 100;
 }
 
+<<<<<<< HEAD
 .nav-menu ul {
     list-style: none;
     text-align: center;
@@ -33,9 +42,43 @@
 }
 
 .nav-menu li a {
-    opacity: 0;
+=======
+.nav-menu.open{
+    height: var(--hauteur-pleine);
 }
 
+/* Liste */
+.nav-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Items */
+.nav-menu li{
+    margin: 25px 0;
+}
+
+.nav-menu a{
+    position: relative;
+    text-decoration: none;
+    font-size: var(--taille-police-menu);
+    font-weight: 600;
+    color: var(--texte-couleur-blanc);
+    letter-spacing: var(--espacement-lettre);
+    padding: var(--espacement-moyen);
+    display: inline-block;
+
+>>>>>>> beta
+    opacity: 0;
+    transition: 
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        color 0.3s ease;
+}
+
+<<<<<<< HEAD
 .nav-titre {
     font-size: var(--texte-titre);
     font-weight: bold;
@@ -58,13 +101,90 @@
     top: 40px;
     left: 20px;
     transform: scale(1.5);
+=======
+/* Animation apparition */
+.nav-menu.open a{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Effet de ligne */
+.nav-menu a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: var(--epaisseur-ligne);
+    background: var(--rose-fonce);
+    transition: 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Hover */
+.nav-menu a:hover{
+    color: var(--rose-fonce);
+}
+
+.nav-menu a:hover::after{
+    width: 100%;
+}
+
+
+
+.nav-close{
+    position: absolute;
+    top: var(--largeur-ligne);
+    left: var(--espacement-grand);
+    scale: var(--echelle-icon);
+>>>>>>> beta
     cursor: pointer;
-    color: var(--texte-couleur-noir);
-    z-index: 10;
+    color: var(--texte-couleur-blanc);
     transition: 0.2s;
 }
 
+<<<<<<< HEAD
 .nav-close:hover {
     color: var(--rose-pale);
     transform: scale(2);
+=======
+.nav-close:hover{
+    color: var(--rose-fonce);
+    transform: rotate(var(--rotation-fermeture)) scale(var(--echelle-hover));
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .nav-menu a {
+        font-size: 2.5rem; /* Slightly smaller font */
+    }
+
+    .nav-menu li {
+        margin: 30px 0; /* More spacing */
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .nav-menu a {
+        font-size: 3rem; /* Larger font */
+    }
+
+    .nav-menu li {
+        margin: 40px 0;
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .nav-menu a {
+        font-size: 3.5rem; /* Even larger */
+    }
+
+    .nav-menu li {
+        margin: 50px 0;
+    }
+>>>>>>> beta
 }

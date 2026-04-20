@@ -1,36 +1,79 @@
-/*[ VARIABLES DU PROJET ]*/
-/* ------------------------------------------------------------ */
 :root {
+    /*[ VALEURS DE BASE POUR REGROUPER LES TAILLES ]*/
+    --taille-petite: 8px;
+    --taille-base: 16px;
+    --taille-grande: 32px;
+
+    /*[ ESPACEMENTS ]*/
+    --espacement-tres-petit: 6px;
+    --espacement-petit: 10px;
+    --espacement-moyen: 20px;
+    --espacement-grand: 30px;
+
+    /*[ POLICES ]*/
+    --taille-police-erreur: 80px;
+    --taille-police-titre-special: 36px;
+    --taille-police-menu: 2.2rem;
+    --espacement-lettre: 1px;
+
+    /*[ DIMENSIONS ]*/
+    --largeur-carte: 120px;
+    --hauteur-carte: 140px;
+    --largeur-icone: 48px;
+    --hauteur-icone: 4px;
+    --largeur-ligne: 50px;
+    --largeur-input: 180px;
+    --largeur-max-conteneur: 360px;
+    --largeur-max-section: 400px;
+    --largeur-max-video: 720px;
+    --hauteur-hero: 760px;
+    --hauteur-pleine: 100vh;
+    --hauteur-zero: 0;
+
+    /*[ BORDURES ET LIGNES ]*/
+    --epaisseur-ligne: 2px;
+    --epaisseur-bordure: 2px;
+
+    /*[ TRANSFORMATIONS ]*/
+    --echelle-icon: 3;
+    --echelle-hover: 1.1;
+    --rotation-fermeture: 90deg;
+
+    /*[ POURCENTAGES ]*/
+    --pourcentage-largeur: 80%;
+
     /*[ COULEURS PRINCIPALES ]*/
-    --blanc-casse: #f2f0ef;
-    --gris-fonce: #161412;
-    --bleu-nuit: #00313F;
-    --bleu-pale: #00738E;
+    --beige: #FCF5CB;
+    --gris-fonce: #0B070E;
+    --bleu-nuit: #04252D;
+    --bleu-pale: #21DDDE;
+    --mauve: #291936;
+    --mauve-clair: #433757;
 
     /*[ COULEURS ACCENT ]*/
-    --rose-fonce: #C3017E;
-    --rose-pale: #FF28B9;
-    --cyan: #00DADB;
+    --rose-fonce: #FD27BA;
+    --rose-pale: #FC7AD3;
+    --cyan: #0C748D;
 
     /*[ TEXTE ]*/
-    --texte-couleur-blanc: #ffffff;
-    --texte-couleur-noir: #000000;
+    --texte-couleur-blanc: #F9F8F1;
+    --texte-couleur-noir: #0B070E;
 
     /*[ BOUTON ]*/
-    --boutton-couleur: #C3017E;
-    --boutton-couleur-hover: #FF28B9;
+    --boutton-couleur: #FD27BA;
+    --boutton-couleur-hover: #FC7AD3;
 
     /*[ UI ]*/
-    --rayon: 8px;
-    --espace-petit: 8px;
-    --espace-moyen: 16px;
-    --espace-grand: 32px;
+    --rayon: var(--taille-petite);
+    --espace-petit: var(--taille-petite);
+    --espace-moyen: var(--taille-base);
+    --espace-grand: var(--taille-grande);
 
     /*[ TYPOGRAPHIE ]*/
     --texte-xs: 12px;
     --texte-petit: 14px;
-    --texte-normal: 16px;
+    --texte-normal: var(--taille-base);
     --texte-moyen: 20px;
     --texte-grand: 24px;
-    --texte-titre: 32px;
+    --texte-titre: var(--taille-grande);
 }

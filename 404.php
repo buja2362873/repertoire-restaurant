@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - OUPS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body class="page-404">
+
+    <div class="erreur-container">
+
+        <div class="erreur-code">404</div>
+
+        <h1 class="erreur-titre">Page introuvable</h1>
+
+        <p class="erreur-texte">
+            Ce plat n'est pas au menu.
+        </p>
+
+        <a href="index.php" class="btn-retour">Retour à l'accueil</a>
+
+    </div>
+
+</body>
+
+</html>
