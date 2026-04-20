@@ -169,10 +169,10 @@
     margin-top: var(--espace-grand);
     position: relative;
     background: transparent;
-    color: var(--cyan);
+    color: var(--bleu-pale);
     font-size: var(--texte-normal);
     letter-spacing: 0.15em;
-    border: var(--epaisseur-bordure) solid var(--cyan);
+    border: var(--epaisseur-bordure) solid var(--bleu-pale);
     padding: var(--espacement-petit) var(--espacement-grand);
     cursor: pointer;
     overflow: hidden;
@@ -183,7 +183,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--cyan);
+    background: var(--bleu-pale);
     transform: scaleX(0);  
     transform-origin: upper right;
     transition: transform 0.35s ease;
@@ -196,7 +196,7 @@
 
 .btn-menu:hover {
     color: var(--texte-couleur-blanc);
-    box-shadow: 0 0 25px var(--cyan);
+    box-shadow: 0 0 25px var(--bleu-pale);
 }
 
 /* MEDIA QUERIES */
