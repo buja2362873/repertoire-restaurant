@@ -62,3 +62,39 @@
     padding-left: 10px;
     font-size: var(--texte-grand);
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .menu-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-item {
+        flex: 1 1 calc(50% - var(--espace-moyen)); /* Two items per row */
+        max-width: calc(50% - var(--espace-moyen));
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .menu-item {
+        flex: 1 1 calc(33.333% - var(--espace-moyen)); /* Three items per row */
+        max-width: calc(33.333% - var(--espace-moyen));
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .menu-list {
+        gap: var(--espace-grand);
+    }
+
+    .menu-item {
+        flex: 1 1 calc(25% - var(--espace-moyen)); /* Four items per row */
+        max-width: calc(25% - var(--espace-moyen));
+    }
+}

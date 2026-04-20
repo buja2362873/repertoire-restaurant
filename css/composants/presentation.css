@@ -44,3 +44,44 @@
     box-shadow: 0 0px 25px var(--rose-pale);
     border-color: var(--rose-pale);
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .presentation h2 {
+        font-size: 2.5rem; /* Larger title */
+    }
+
+    .presentation-texte {
+        font-size: 1.1rem; /* Slightly larger text */
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .presentation {
+        padding: var(--espace-grand) var(--espace-moyen);
+    }
+
+    .chef-image img {
+        max-width: 600px; /* Larger image */
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .presentation {
+        margin: 0 auto;
+    }
+
+    .presentation h2 {
+        font-size: 3rem;
+    }
+
+    .presentation-texte {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto var(--espace-grand);
+    }
+}

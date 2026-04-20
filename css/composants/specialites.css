@@ -98,3 +98,35 @@
     box-shadow: 0 0px 25px var(--cyan);
     border-color: var(--rose-pale);
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - var(--espace-moyen)); /* Two cards per row */
+        max-width: calc(50% - var(--espace-moyen));
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .card {
+        flex: 1 1 calc(33.333% - var(--espace-moyen)); /* Three cards per row */
+        max-width: calc(33.333% - var(--espace-moyen));
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .card {
+        flex: 1 1 calc(25% - var(--espace-moyen)); /* Four cards per row */
+        max-width: calc(25% - var(--espace-moyen));
+    }
+}

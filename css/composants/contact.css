@@ -34,3 +34,36 @@
     margin: var(--espacement-tres-petit) 0;
     color: var(--blanc-casse);
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .map-container {
+        max-width: 700px;
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-container {
+        max-width: 800px;
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .contact {
+        margin: 0 auto;
+    }
+
+    .map-container {
+        max-width: 1000px;
+    }
+}

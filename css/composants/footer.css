@@ -91,3 +91,36 @@
 .footer-liens {
     margin-top: var(--espace-petit);
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .newsletter-form input {
+        width: 250px; 
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .footer-contenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-form input {
+        width: 300px;
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .footer-contenu {
+        max-width: 300px; 
+    }
+
+    .newsletter-form input {
+        width: 300px; 
+    }
+}

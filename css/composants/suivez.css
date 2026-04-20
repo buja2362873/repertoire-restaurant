@@ -53,3 +53,45 @@
     background: var(--rose-fonce);
     box-shadow: 0 0 15px var(--rose-fonce);
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .reseaux {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .reseaux button {
+        flex: 1 1 auto;
+        max-width: 200px;
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .video-container iframe {
+        max-width: 800px;
+    }
+
+    .reseaux button {
+        max-width: 250px;
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .suivez-nous {
+        margin: 0 auto;
+    }
+
+    .video-container iframe {
+        max-width: 1000px;
+    }
+
+    .reseaux button {
+        max-width: 300px;
+    }
+}
