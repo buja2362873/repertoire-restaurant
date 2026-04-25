@@ -1,6 +1,10 @@
 <?php
 $currentPage = basename($_SERVER['PHP_SELF']);
 $showImg = false;
+
+// Charger les données du menu depuis la base de données
+require_once 'functions/menu_loader.php';
+$plats = getMenuByType('plats');
 ?>
 
 <!DOCTYPE html>

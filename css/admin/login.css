@@ -1,0 +1,115 @@
+/* Admin Login Styles */
+/* ============================================================ */
+
+.admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--hauteur-pleine);
+    background: linear-gradient(135deg, var(--bleu-nuit) 0%, var(--mauve) 100%);
+    font-family: inherit;
+}
+
+.admin-login-box {
+    background: var(--beige);
+    padding: var(--espacement-grand) var(--espacement-moyen);
+    border-radius: calc(var(--rayon) * 4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 360px;
+}
+
+.admin-login-title {
+    text-align: center;
+    color: var(--texte-couleur-noir);
+    font-size: var(--texte-titre);
+    margin-bottom: var(--espacement-grand);
+    font-weight: bold;
+}
+
+.admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacement-moyen);
+}
+
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacement-petit);
+}
+
+.admin-label {
+    color: var(--texte-couleur-noir);
+    font-weight: 600;
+    font-size: var(--texte-petit);
+    text-transform: capitalize;
+}
+
+.admin-input {
+    padding: var(--espacement-petit) var(--espacement-moyen);
+    border: var(--epaisseur-bordure) solid var(--mauve-clair);
+    border-radius: var(--rayon);
+    font-family: inherit;
+    font-size: var(--texte-normal);
+    color: var(--texte-couleur-noir);
+    background: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-input:focus {
+    outline: none;
+    border-color: var(--rose-fonce);
+    box-shadow: 0 0 0 3px rgba(253, 39, 186, 0.1);
+}
+
+.admin-btn-primary {
+    padding: var(--espacement-moyen) var(--espacement-grand);
+    background: var(--boutton-couleur);
+    color: white;
+    border: none;
+    border-radius: var(--rayon);
+    font-size: var(--texte-normal);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: inherit;
+}
+
+.admin-btn-primary:hover {
+    background: var(--boutton-couleur-hover);
+    transform: translateY(-2px);
+}
+
+.admin-btn-primary:active {
+    transform: translateY(0);
+}
+
+.admin-error-message {
+    background: #fee;
+    color: #c33;
+    padding: var(--espacement-moyen);
+    border-radius: var(--rayon);
+    margin-bottom: var(--espacement-moyen);
+    border-left: 4px solid #c33;
+    font-size: var(--texte-petit);
+}
+
+.admin-login-hint {
+    text-align: center;
+    color: var(--mauve-clair);
+    font-size: var(--texte-xs);
+    margin-top: var(--espacement-moyen);
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+    .admin-login-box {
+        padding: var(--espacement-moyen);
+        margin: var(--espacement-moyen);
+    }
+
+    .admin-login-title {
+        font-size: var(--texte-grand);
+    }
+}

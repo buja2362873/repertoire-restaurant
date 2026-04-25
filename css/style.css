@@ -15,8 +15,6 @@
 @import url('composants/promo.css');
 @import url('composants/contact.css');
 @import url('composants/menu.css');
-@import url('composants/desserts.css');
-
 
 /*[ importation du dossier layout ]*/
 @import url('layout/structure.css');
