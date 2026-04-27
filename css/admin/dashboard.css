@@ -365,7 +365,8 @@
 }
 
 .admin-input,
-.admin-textarea {
+.admin-textarea,
+.admin-file-input {
     padding: var(--espacement-petit) var(--espacement-moyen);
     border: var(--epaisseur-bordure) solid var(--mauve-clair);
     border-radius: var(--rayon);
@@ -376,11 +377,53 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.admin-file-input {
+    cursor: pointer;
+    padding: var(--espacement-moyen);
+    background: linear-gradient(135deg, rgba(253, 39, 186, 0.05), rgba(33, 221, 222, 0.05));
+}
+
+.admin-file-input::file-selector-button {
+    padding: var(--espacement-petit) var(--espacement-moyen);
+    background: var(--rose-fonce);
+    color: white;
+    border: none;
+    border-radius: var(--rayon);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    margin-right: var(--espacement-moyen);
+}
+
+.admin-file-input::file-selector-button:hover {
+    background: var(--rose-pale);
+}
+
 .admin-input:focus,
-.admin-textarea:focus {
+.admin-textarea:focus,
+.admin-file-input:focus {
     outline: none;
     border-color: var(--rose-fonce);
     box-shadow: 0 0 0 3px rgba(253, 39, 186, 0.1);
+}
+
+.admin-image-preview-container {
+    margin-top: var(--espacement-petit);
+    padding: var(--espacement-moyen);
+    border: 2px dashed var(--mauve-clair);
+    border-radius: var(--rayon);
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(33, 221, 222, 0.05);
+}
+
+.admin-preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: var(--rayon);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .admin-textarea {
