@@ -64,6 +64,39 @@ class AdminDashboard {
             label.textContent = this.formatColumnName(column.name);
 
             let input;
+
+            // Wine-specific type selector
+            const isWineTypeField = selectedTable === 'alchool' && column.name.toLowerCase() === 'type';
+            if (isWineTypeField) {
+                input = document.createElement('select');
+                input.className = 'admin-input';
+
+                const wineTypes = [
+                    'sake_et_shoshu',
+                    'vin_blanc',
+                    'vin_rouge',
+                    'bieres_japonaise_et_sake_petillant'
+                ];
+                wineTypes.forEach(type => {
+                    const option = document.createElement('option');
+                    option.value = type;
+                    option.textContent = type;
+                    input.appendChild(option);
+                });
+
+                input.id = column.name;
+                input.name = column.name;
+                input.required = !column.notnull ? false : true;
+
+                if (this.currentMode === 'edit' && this.currentRow[column.name]) {
+                    input.value = this.currentRow[column.name];
+                }
+
+                group.appendChild(label);
+                group.appendChild(input);
+                this.formFields.appendChild(group);
+                return;
+            }
             
             // Check if this is an image field
             const isImageField = imageKeywords.some(keyword => 
@@ -87,23 +120,26 @@ class AdminDashboard {
                 // Add change listener for preview
                 input.addEventListener('change', (e) => this.handleImagePreview(e, column.name));
                 
-                // If editing and there's an existing image value
+                // If editing and there's an existing image value, preserve it if no new file is selected
                 if (this.currentMode === 'edit' && this.currentRow[column.name]) {
                     const existingImage = this.currentRow[column.name];
-                    // Try to display existing image
-                    if (existingImage.startsWith('data:') || existingImage.startsWith('http')) {
-                        const preview = document.createElement('img');
-                        preview.src = existingImage;
-                        preview.className = 'admin-preview-image';
-                        previewContainer.appendChild(preview);
-                        
-                        // Add a hidden input to store the existing value if no new file is selected
-                        const hiddenInput = document.createElement('input');
-                        hiddenInput.type = 'hidden';
-                        hiddenInput.name = `${column.name}_existing`;
-                        hiddenInput.value = existingImage;
-                        group.appendChild(hiddenInput);
+
+                    const hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = `${column.name}_existing`;
+                    hiddenInput.value = existingImage;
+                    group.appendChild(hiddenInput);
+
+                    let previewSrc = existingImage;
+                    if (!existingImage.startsWith('data:') && !existingImage.startsWith('http') && !existingImage.startsWith('/')) {
+                        previewSrc = existingImage.startsWith('../') ? existingImage : `../${existingImage}`;
                     }
+
+                    const preview = document.createElement('img');
+                    preview.src = previewSrc;
+                    preview.className = 'admin-preview-image';
+                    preview.alt = this.formatColumnName(column.name);
+                    previewContainer.appendChild(preview);
                 }
                 
                 group.appendChild(label);
