@@ -4,7 +4,9 @@ $showImg = false;
 
 // Charger les données du menu depuis la base de données
 require_once 'functions/menu_loader.php';
-$plats = getMenuByType('plats');
+$sushis = getMenuByType('plats_principaux_sushis');
+$grillades = getMenuByType('plats_principaux_grillades');
+$vegetarien = getMenuByType('plats_vegetarien');
 ?>
 
 <!DOCTYPE html>
@@ -33,37 +35,17 @@ $plats = getMenuByType('plats');
             <h3 class="categorie-titre">Sushis et sashimis</h3>
 
             <div class="menu-list">
-
-                <div class="menu-item">
-                    <h4>Assortiment makis & nigiris (12 morceaux)</h4>
-                    <p>Sélection du chef, soupe miso et salade de wakame</p>
-                    <span>42$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Assortiment de sashimis (10 morceaux)</h4>
-                    <p>Sélection du chef, soupe miso et salade de wakame</p>
-                    <span>48$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Makis, hosomakis et nigiris (12 morceaux)</h4>
-                    <p>Sélection du chef, soupe miso et salade de wakame</p>
-                    <span>34$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Chirashi sushi</h4>
-                    <p>Bol de riz vinaigré, sashimis et légumes marinés</p>
-                    <span>35$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Plateau Omakase (2 personnes)</h4>
-                    <p>Sélection exclusive du chef, soupe miso et salade</p>
-                    <span>88$</span>
-                </div>
-
+                <?php if (!empty($sushis)): ?>
+                    <?php foreach ($sushis as $item): ?>
+                        <div class="menu-item">
+                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                            <p><?php echo htmlspecialchars($item['description']); ?></p>
+                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Aucun sushi trouvé.</p>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -72,37 +54,17 @@ $plats = getMenuByType('plats');
             <h3 class="categorie-titre">Grillades</h3>
 
             <div class="menu-list">
-
-                <div class="menu-item">
-                    <h4>Saumon teriyaki</h4>
-                    <p>Légumes sautés au shoyu, riz vapeur</p>
-                    <span>32$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Bœuf wagyu grillé</h4>
-                    <p>Wagyu A5, sauce yakiniku, légumes au sésame</p>
-                    <span>48$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Poulet karaage</h4>
-                    <p>Poulet frit, mayonnaise au yuzu</p>
-                    <span>38$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Ramen miso maison</h4>
-                    <p>Porc chashu, œuf mariné, nouilles fraîches</p>
-                    <span>44$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Assortiment yakitori (10 morceaux)</h4>
-                    <p>Poulet, bœuf, crevettes + riz et Sapporo</p>
-                    <span>40$</span>
-                </div>
-
+                <?php if (!empty($grillades)): ?>
+                    <?php foreach ($grillades as $item): ?>
+                        <div class="menu-item">
+                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                            <p><?php echo htmlspecialchars($item['description']); ?></p>
+                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Aucune grillade trouvée.</p>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -111,37 +73,17 @@ $plats = getMenuByType('plats');
             <h3 class="categorie-titre">Végétarien</h3>
 
             <div class="menu-list">
-
-                <div class="menu-item">
-                    <h4>Ramen shiitake</h4>
-                    <p>Bouillon miso, tofu grillé, nouilles udon</p>
-                    <span>28$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Donburi tofu caramélisé</h4>
-                    <p>Riz japonais, légumes sautés, sésame</p>
-                    <span>32$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Sushis végétariens (10 morceaux)</h4>
-                    <p>Avocat, concombre, mangue, radis</p>
-                    <span>30$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Tempura de légumes</h4>
-                    <p>Légumes racines, sauce tentsuyu</p>
-                    <span>24$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Gyoza aux légumes</h4>
-                    <p>Sauce ponzu et gingembre</p>
-                    <span>32$</span>
-                </div>
-
+                <?php if (!empty($vegetarien)): ?>
+                    <?php foreach ($vegetarien as $item): ?>
+                        <div class="menu-item">
+                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                            <p><?php echo htmlspecialchars($item['description']); ?></p>
+                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Aucun plat végétarien trouvé.</p>
+                <?php endif; ?>
             </div>
         </div>
 

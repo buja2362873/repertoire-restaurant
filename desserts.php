@@ -32,43 +32,17 @@ $desserts = getMenuByType('desserts');
             <h3 class="categorie-titre">Nos douceurs japonaises</h3>
 
             <div class="menu-list">
-
-                <div class="menu-item">
-                    <h4>Mochis glacés assortis</h4>
-                    <p>Matcha, mangue, sésame noir</p>
-                    <span>12$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Dorayaki au haricot rouge</h4>
-                    <p>Pancakes japonais, pâte de haricot azuki</p>
-                    <span>10$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Cheesecake au yuzu</h4>
-                    <p>Crémeux et acidulé, coulis de fruits rouges</p>
-                    <span>12$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Gâteau matcha & chocolat blanc</h4>
-                    <p>Fondant, sauce caramel miso</p>
-                    <span>12$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Glace artisanale au sésame noir</h4>
-                    <p>Crémeuse et légèrement sucrée</p>
-                    <span>10$</span>
-                </div>
-
-                <div class="menu-item">
-                    <h4>Taiyaki à la crème pâtissière</h4>
-                    <p>Gaufre japonaise en forme de poisson</p>
-                    <span>10$</span>
-                </div>
-
+                <?php if (!empty($desserts)): ?>
+                    <?php foreach ($desserts as $item): ?>
+                        <div class="menu-item">
+                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                            <p><?php echo htmlspecialchars($item['description']); ?></p>
+                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Aucun dessert trouvé.</p>
+                <?php endif; ?>
             </div>
         </div>
 

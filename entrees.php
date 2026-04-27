@@ -29,79 +29,33 @@ $entrees = getMenuByType('entrees');
         <h2>Entrées</h2>
 
         <div class="menu-list">
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/1_edamame.jpg" alt="Edamame au sel de mer fumé">
-                <div class="menu-content">
-                    <h3>Edamame au sel de mer fumé</h3>
-                    <p>Fèves de soja vapeur, sel fumé et zeste de yuzu</p>
-                    <span>10$</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/2_tataki_thon_rouge.jpg" alt="Tataki de thon rouge">
-                <div class="menu-content">
-                    <h3>Tataki de thon rouge</h3>
-                    <p>Thon saisi, sauce ponzu, gingembre mariné</p>
-                    <span>16$</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/3_gyoza_porc_crevettes.jpg" alt="Gyoza de porc et crevettes">
-                <div class="menu-content">
-                    <h3>Gyoza de porc et crevettes</h3>
-                    <p>Raviolis grillés, sauce miso épicée</p>
-                    <span>14$</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/4_salade_wakame.jpg" alt="Salade wakame et sésame noir">
-                <div class="menu-content">
-                    <h3>Salade wakame et sésame noir</h3>
-                    <p>Algues marinées, vinaigrette soja-sésame</p>
-                    <span>15$</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/5_soupe_miso.jpg" alt="Soupe miso traditionnelle">
-                <div class="menu-content">
-                    <h3>Soupe miso traditionnelle</h3>
-                    <p>Bouillon miso, tofu, algues wakame, oignons verts</p>
-                    <span>8$</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/6_tempura_crevettes.jpg" alt="Tempura de crevettes">
-                <div class="menu-content">
-                    <h3>Tempura de crevettes</h3>
-                    <p>Pâte croustillante, sauce tentsuyu</p>
-                    <span>14$</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/7_tartare_saumon.jpg" alt="Tartare de saumon façon japonaise">
-                <div class="menu-content">
-                    <h3>Tartare de saumon façon japonaise</h3>
-                    <p>Saumon, huile de sésame, shiso, tobiko</p>
-                    <span>18$</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="assets/images/jpg/8_yakitori_poulet.jpg" alt="Yakitori de poulet">
-                <div class="menu-content">
-                    <h3>Yakitori de poulet</h3>
-                    <p>Brochettes de poulet laqué, sauce tare maison</p>
-                    <span>16$</span>
-                </div>
-            </div>
-
+            <?php if (!empty($entrees)): ?>
+                <?php foreach ($entrees as $item): ?>
+                    <div class="menu-item">
+                        <?php
+                        // Construire le chemin de l'image basé sur l'ID
+                        $imagePath = "assets/images/jpg/" . $item['id'] . "_";
+                        // Simplifier le nom pour le fichier image
+                        $imageName = strtolower(str_replace([' ', 'é', 'è', 'à', 'ç'], ['_', 'e', 'e', 'a', 'c'], $item['name']));
+                        $imageName = preg_replace('/[^a-z0-9_]/', '', $imageName);
+                        $imagePath .= $imageName . ".jpg";
+                        
+                        // Vérifier si l'image existe, sinon utiliser une image par défaut
+                        if (!file_exists($imagePath)) {
+                            $imagePath = "assets/images/jpg/1_edamame.jpg"; // image par défaut
+                        }
+                        ?>
+                        <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                        <div class="menu-content">
+                            <h3><?php echo htmlspecialchars($item['name']); ?></h3>
+                            <p><?php echo htmlspecialchars($item['description']); ?></p>
+                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Aucun élément trouvé dans le menu.</p>
+            <?php endif; ?>
         </div>
 
     </main>
