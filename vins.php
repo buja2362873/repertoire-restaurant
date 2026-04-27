@@ -4,7 +4,10 @@ $showImg = false;
 
 // Charger les données du menu depuis la base de données
 require_once 'functions/menu_loader.php';
-$vins = getAllWines();
+$sakeEtShoshu = getWinesByType('sake_et_shoshu');
+$vinBlanc = getWinesByType('vin_blanc');
+$vinRouge = getWinesByType('vin_rouge');
+$bieresEtSakePetillant = getWinesByType('bieres_japonaise_et_sake_petillant');
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +38,19 @@ $vins = getAllWines();
                 <?php if (!empty($vins)): ?>
                     <?php foreach ($vins as $item): ?>
                         <div class="menu-item">
+                            <?php if (!empty($item['image_url'])): ?>
+                                <?php
+                                    $wineImage = $item['image_url'];
+                                    if (!preg_match('/^(https?:\/\/|data:|\/)/', $wineImage)) {
+                                        $wineImage = $wineImage;
+                                    }
+                                ?>
+                                <img src="<?php echo htmlspecialchars($wineImage); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                            <?php endif; ?>
                             <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                            <?php if (!empty($item['type'])): ?>
+                                <p><?php echo htmlspecialchars($item['type']); ?></p>
+                            <?php endif; ?>
                             <p><?php echo htmlspecialchars($item['country']); ?></p>
                             <span><?php echo htmlspecialchars($item['price']); ?> $</span>
                         </div>

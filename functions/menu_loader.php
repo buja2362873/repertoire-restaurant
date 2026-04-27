@@ -39,6 +39,31 @@ function getMenuByType($type) {
 }
 
 /**
+ * Récupère tous les vins filtrés par type
+ * 
+ * @param string $type Le type de vin (ex: 'Vin rouge', 'Vin blanc', 'Saké et shoshu', 'Bières japonaise et saké pétillant')
+ * @return array Tableau des vins du type spécifié
+ */
+function getWinesByType($type) {
+    try {
+        global $pdo;
+        
+        $sql = "SELECT id, name, country, type, price, image_url, created_at, updated_at 
+                FROM alchool 
+                WHERE type LIKE ? 
+                ORDER BY name ASC";
+        
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$type . '%']);
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Database Error in getWinesByType: " . $e->getMessage());
+        return [];
+    }
+}
+
+/**
  * Récupère tous les vins
  * 
  * @return array Tableau des vins
@@ -47,9 +72,9 @@ function getAllWines() {
     try {
         global $pdo;
         
-        $sql = "SELECT id, name, country, price, created_at, updated_at 
+        $sql = "SELECT id, name, country, type, price, image_url, created_at, updated_at 
                 FROM alchool 
-                ORDER BY name ASC";
+                ORDER BY type ASC, name ASC";
         
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
