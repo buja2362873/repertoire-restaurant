@@ -77,3 +77,30 @@
     height: 100vh;
     overflow: hidden;
 }
+
+.logo-header {
+    position: absolute;
+    top: var(--largeur-ligne);
+    right: var(--espacement-grand);
+    width: 80px; /* ajuste selon ton design */
+    z-index: 10;
+}
+
+
+@media (min-width: 576px) {
+    .logo-header {
+        width: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo-header {
+        width: 120px;
+    }
+}
+
+@media (min-width: 992px) {
+    .logo-header {
+        width: 140px;
+    }
+}
