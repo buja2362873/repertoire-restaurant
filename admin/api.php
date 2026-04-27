@@ -19,16 +19,75 @@ if (empty($table) || !preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $table)) {
     exit;
 }
 
+/**
+ * Handle file uploads and convert to base64
+ */
+function handleFileUploads() {
+    $imageKeywords = ['image', 'photo', 'picture', 'img', 'visual', 'illustration'];
+    $data = $_POST;
+    
+    // Process each file input
+    foreach ($_FILES as $fieldName => $file) {
+        if ($file['error'] === UPLOAD_ERR_NO_FILE) {
+            continue;
+        }
+        
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            throw new Exception('File upload error: ' . $file['error']);
+        }
+        
+        // Check if it's an image field
+        $isImageField = false;
+        foreach ($imageKeywords as $keyword) {
+            if (stripos($fieldName, $keyword) !== false) {
+                $isImageField = true;
+                break;
+            }
+        }
+        
+        if ($isImageField) {
+            // Validate file is actually an image
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $mimeType = finfo_file($finfo, $file['tmp_name']);
+            finfo_close($finfo);
+            
+            if (strpos($mimeType, 'image/') !== 0) {
+                throw new Exception('Invalid file type. Only images are allowed.');
+            }
+            
+            // Convert to base64
+            $imageData = file_get_contents($file['tmp_name']);
+            if ($imageData === false) {
+                throw new Exception('Failed to read file');
+            }
+            
+            // Store as base64 data URL
+            $data[$fieldName] = 'data:' . $mimeType . ';base64,' . base64_encode($imageData);
+        }
+    }
+    
+    return $data;
+}
+
 try {
     switch ($action) {
         case 'add':
-            $data = $_POST;
+            $data = handleFileUploads();
+            
+            // Remove system fields and action/table fields
             unset($data['table'], $data['action']);
             
             // Remove system fields that should never be set
             $systemFields = ['id', 'created_at', 'updated_at'];
             foreach ($systemFields as $field) {
                 unset($data[$field]);
+            }
+            
+            // Remove existing image placeholders (from edit mode)
+            foreach ($data as $key => $value) {
+                if (strpos($key, '_existing') !== false) {
+                    unset($data[$key]);
+                }
             }
             
             $columns = array_keys($data);
@@ -45,7 +104,7 @@ try {
         case 'update':
             $id = $_POST['id'] ?? '';
             $idColumn = $_POST['idColumn'] ?? 'id';
-            $data = $_POST;
+            $data = handleFileUploads();
             
             unset($data['table'], $data['action'], $data['id'], $data['idColumn']);
             
@@ -53,6 +112,19 @@ try {
             $systemFields = ['id', 'created_at', 'updated_at'];
             foreach ($systemFields as $field) {
                 unset($data[$field]);
+            }
+            
+            // Handle existing images (if no new file was uploaded for that field)
+            $imageFields = [];
+            foreach ($data as $key => $value) {
+                if (strpos($key, '_existing') !== false) {
+                    $originalField = str_replace('_existing', '', $key);
+                    // If the original field is not set (no new file), use the existing value
+                    if (empty($data[$originalField])) {
+                        $data[$originalField] = $value;
+                    }
+                    unset($data[$key]);
+                }
             }
             
             $setParts = [];

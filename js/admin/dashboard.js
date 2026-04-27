@@ -45,6 +45,9 @@ class AdminDashboard {
 
         // System fields that should never be editable
         const systemFields = ['id', 'created_at', 'updated_at', 'created_At', 'updated_At'];
+        
+        // Keywords that indicate an image field
+        const imageKeywords = ['image', 'photo', 'picture', 'img', 'visual', 'illustration'];
 
         tableColumns.forEach(column => {
             // Skip system fields
@@ -61,8 +64,56 @@ class AdminDashboard {
             label.textContent = this.formatColumnName(column.name);
 
             let input;
+            
+            // Check if this is an image field
+            const isImageField = imageKeywords.some(keyword => 
+                column.name.toLowerCase().includes(keyword)
+            );
 
-            // Determine input type based on column type
+            if (isImageField) {
+                // Create file input for image fields
+                input = document.createElement('input');
+                input.type = 'file';
+                input.className = 'admin-file-input';
+                input.accept = 'image/*';
+                input.id = column.name;
+                input.name = column.name;
+                
+                // Add preview container
+                const previewContainer = document.createElement('div');
+                previewContainer.className = 'admin-image-preview-container';
+                previewContainer.id = `preview_${column.name}`;
+                
+                // Add change listener for preview
+                input.addEventListener('change', (e) => this.handleImagePreview(e, column.name));
+                
+                // If editing and there's an existing image value
+                if (this.currentMode === 'edit' && this.currentRow[column.name]) {
+                    const existingImage = this.currentRow[column.name];
+                    // Try to display existing image
+                    if (existingImage.startsWith('data:') || existingImage.startsWith('http')) {
+                        const preview = document.createElement('img');
+                        preview.src = existingImage;
+                        preview.className = 'admin-preview-image';
+                        previewContainer.appendChild(preview);
+                        
+                        // Add a hidden input to store the existing value if no new file is selected
+                        const hiddenInput = document.createElement('input');
+                        hiddenInput.type = 'hidden';
+                        hiddenInput.name = `${column.name}_existing`;
+                        hiddenInput.value = existingImage;
+                        group.appendChild(hiddenInput);
+                    }
+                }
+                
+                group.appendChild(label);
+                group.appendChild(input);
+                group.appendChild(previewContainer);
+                this.formFields.appendChild(group);
+                return;
+            }
+
+            // Determine input type based on column type for non-image fields
             if (column.type.toLowerCase().includes('text')) {
                 input = document.createElement('textarea');
                 input.className = 'admin-textarea';
@@ -93,6 +144,25 @@ class AdminDashboard {
             group.appendChild(input);
             this.formFields.appendChild(group);
         });
+    }
+    
+    handleImagePreview(e, columnName) {
+        const file = e.target.files[0];
+        const previewContainer = document.getElementById(`preview_${columnName}`);
+        
+        // Clear previous previews
+        previewContainer.innerHTML = '';
+        
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const img = document.createElement('img');
+                img.src = event.target.result;
+                img.className = 'admin-preview-image';
+                previewContainer.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
     }
 
     formatColumnName(name) {
