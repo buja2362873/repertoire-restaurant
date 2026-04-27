@@ -33,19 +33,8 @@ $entrees = getMenuByType('entrees');
                 <?php foreach ($entrees as $item): ?>
                     <div class="menu-item">
                         <?php
-                        // Construire le chemin de l'image basé sur l'ID
-                        $imagePath = "assets/images/jpg/" . $item['id'] . "_";
-                        // Simplifier le nom pour le fichier image
-                        $imageName = strtolower(str_replace([' ', 'é', 'è', 'à', 'ç'], ['_', 'e', 'e', 'a', 'c'], $item['name']));
-                        $imageName = preg_replace('/[^a-z0-9_]/', '', $imageName);
-                        $imagePath .= $imageName . ".jpg";
-                        
-                        // Vérifier si l'image existe, sinon utiliser une image par défaut
-                        if (!file_exists($imagePath)) {
-                            $imagePath = "assets/images/jpg/1_edamame.jpg"; // image par défaut
-                        }
                         ?>
-                        <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                        <img src="<?php echo htmlspecialchars($item['image_url']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
                         <div class="menu-content">
                             <h3><?php echo htmlspecialchars($item['name']); ?></h3>
                             <p><?php echo htmlspecialchars($item['description']); ?></p>
