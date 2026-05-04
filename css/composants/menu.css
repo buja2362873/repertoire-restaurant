@@ -145,6 +145,31 @@
     text-shadow: 0 0 10px color-mix(in srgb, var(--cyan) 50%, transparent);
 }
 
+.wine-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.wine-meta p {
+    margin: 0;
+}
+
+.wine-type {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--rose-fonce);
+}
+
+.wine-country {
+    font-size: 0.95rem;
+    color: var(--blanc-casse);
+    opacity: 0.9;
+}
+
 .menu-item p {
     font-size: var(--texte-petit);
     color: var(--blanc-casse);
