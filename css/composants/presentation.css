@@ -24,7 +24,7 @@
 
 .presentation h2 {
     font-size: var(--texte-titre);
-    color: var(--rose-fonce);
+    color: var(--titre-couleur-rose-fonce);
     margin-bottom: var(--espace-moyen);
 }
 

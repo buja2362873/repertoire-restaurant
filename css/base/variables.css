@@ -57,6 +57,12 @@
     --neon-cyan: #00f5ff;
     --neon-rose: #ff2d78;
 
+    /*[ TITRES ]*/
+    --titre-couleur-bleu-pale: var(--bleu-pale);
+    --titre-couleur-rose-fonce: var(--rose-fonce);
+    --titre-shadow-bleu-pale: 0 0 10px rgba(33, 221, 222, 0.45);
+    --titre-shadow-rose-fonce: 0 0 10px rgba(253, 39, 186, 0.45);
+
     /*[ TEXTE ]*/
     --texte-couleur-blanc: #F9F8F1;
     --texte-couleur-noir: #0B070E;
