@@ -80,7 +80,6 @@
     border: var(--epaisseur-bordure) solid var(--rose-fonce);
 }
 
-/* Lueur de fond au hover */
 .card::after {
     content: '';
     position: absolute;
@@ -110,7 +109,7 @@
 }
 
 .card p {
-    font-size: var(--texte-petit);
+    font-size: var(--texte-grand);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: var(--espacement-tres-petit);
@@ -123,44 +122,6 @@
 .card:hover p {
     text-shadow: 0 0 8px var(--rose-fonce);
     color: #ffd0e0;
-}
-
-/* LIGNE */
-
-.ligne {
-    width: 40px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-    margin-bottom: var(--espacement-petit);
-    position: relative;
-}
-
-.ligne::after {
-    content: '';
-    position: absolute;
-    inset: -1px 10%;
-    background: linear-gradient(90deg, transparent, var(--bleu-pale), transparent);
-    filter: blur(2px);
-}
-
-/* ICÔNES */
-
-.icon-sushi,
-.icon-grill,
-.icon-vin {
-    width: var(--largeur-icone);
-    height: var(--largeur-icone);
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease, transform 0.3s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.card:hover .icon-sushi,
-.card:hover .icon-grill,
-.card:hover .icon-vin {
-    filter: brightness(0) invert(1) drop-shadow(0 0 8px var(--rose-fonce));
-    transform: scale(1.1);
 }
 
 /* BOUTON */
@@ -199,6 +160,81 @@
     box-shadow: 0 0 25px var(--bleu-pale);
 }
 
+.specialites-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: var(--bleu-pale);
+    opacity: 0.7;
+    margin-top: calc(var(--espace-grand) * -0.6);
+    margin-bottom: var(--espace-grand);
+    text-transform: none;
+}
+
+
+.titre-deco h2 {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.card-num {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--neon-cyan);
+    opacity: 0.45;
+    font-variant-numeric: tabular-nums;
+    transition: opacity 0.3s;
+}
+.card:hover .card-num {
+    opacity: 0.9;
+}
+
+.card-kanji {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.75rem;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--rose-fonce);
+    opacity: 0.08;
+    font-weight: 900;
+    pointer-events: none;
+    transition: opacity 0.4s, transform 0.4s;
+    user-select: none;
+}
+.card:hover .card-kanji {
+    opacity: 0.18;
+    transform: scale(1.1) translateY(-4px);
+}
+
+.card-corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease,
+                border-color 0.3s ease;
+    opacity: 0.5;
+}
+.card-corner--tl { top: 6px;    left: 6px;    border-top: 1px solid var(--neon-cyan); border-left: 1px solid var(--neon-cyan); }
+.card-corner--tr { top: 6px;    right: 6px;   border-top: 1px solid var(--neon-cyan); border-right: 1px solid var(--neon-cyan); }
+.card-corner--bl { bottom: 6px; left: 6px;    border-bottom: 1px solid var(--neon-cyan); border-left: 1px solid var(--neon-cyan); }
+.card-corner--br { bottom: 6px; right: 6px;   border-bottom: 1px solid var(--neon-cyan); border-right: 1px solid var(--neon-cyan); }
+
+.card:hover .card-corner {
+    width: 18px;
+    height: 18px;
+    opacity: 1;
+    border-color: var(--rose-pale);
+}
+
+a.btn-menu {
+    display: inline-block;
+    text-decoration: none;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 576px) {
@@ -209,14 +245,14 @@
     .specialites h2 {
         font-size: calc(var(--texte-titre) * 1.05);
     }
-
+    
     .cards {
         grid-template-columns: repeat(3, minmax(240px, 1fr));
         justify-content: center;
         gap: calc(var(--espace-grand) * 1.3);
         max-width: 1200px;
     }
-
+    
     .card {
         max-width: 460px;
         min-height: calc(var(--hauteur-carte) + 20px);
