@@ -35,9 +35,11 @@ $desserts = getMenuByType('desserts');
                 <?php if (!empty($desserts)): ?>
                     <?php foreach ($desserts as $item): ?>
                         <div class="menu-item">
-                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
-                            <p><?php echo htmlspecialchars($item['description']); ?></p>
-                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            <div class="menu-content">
+                                <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                                <p><?php echo htmlspecialchars($item['description']); ?></p>
+                                <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>

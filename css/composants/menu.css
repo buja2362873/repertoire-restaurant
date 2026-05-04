@@ -2,13 +2,52 @@
     padding: var(--espace-grand);
     background: var(--mauve-clair);
     color: var(--texte-couleur-blanc);
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
 }
 
 .menu-section h2 {
     text-align: center;
     color: var(--rose-fonce);
     margin-bottom: var(--espace-grand);
-    font-size: var(--texte-titre);
+    font-size: 3em;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px var(--rose-fonce),
+        0 0 30px color-mix(in srgb, var(--rose-fonce) 40%, transparent);
+
+    position: relative;
+    padding-bottom: var(--espace-moyen);
+}
+
+.menu-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--rose-fonce),
+        var(--rose-fonce),
+        transparent
+    );
 }
 
 .menu-categorie {
@@ -18,58 +57,129 @@
 .categorie-titre {
     color: var(--bleu-pale);
     margin-bottom: var(--espace-moyen);
-    border-left: 3px solid var(--rose-fonce);
-    padding-left: 10px;
+    padding-left: 14px;
     font-size: var(--texte-grand);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    border-left: none;
+    position: relative;
 }
+
+.categorie-titre::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--rose-fonce));
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--rose-fonce);
+}
+
+/* ─── GRILLE ─────────────────────────────────────── */
 
 .menu-list {
     display: grid;
     gap: var(--espace-moyen);
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
 }
 
-/* --- ITEM --- */
+/* ─── ITEM ───────────────────────────────────────── */
+
 .menu-item {
     display: flex;
     flex-direction: column;
-    height: 100%; 
-    
-    padding: var(--espace-moyen);
-    border: 1px solid var(--rose-fonce);
-    border-radius: var(--rayon);
-    background: var(--mauve);
+    height: 100%;
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    padding: var(--espace-moyen);
+    border: 1px solid color-mix(in srgb, var(--rose-fonce) 35%, transparent);
+    border-radius: var(--rayon);
+    background: color-mix(in srgb, var(--mauve) 80%, transparent);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
 }
 
-.menu-item h3 {
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        color-mix(in srgb, var(--rose-fonce) 25%, transparent),
+        transparent 70%
+    );
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    opacity: 0;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-item h3,
+.menu-item h4 {
     color: var(--cyan);
-    margin-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 10px color-mix(in srgb, var(--cyan) 50%, transparent);
 }
 
 .menu-item p {
     font-size: var(--texte-petit);
     color: var(--blanc-casse);
-    line-height: 1.4; 
+    line-height: 1.6;
+    opacity: 0.8;
 }
 
 .menu-item span {
     display: block;
-    margin-top: auto; 
-    padding-top: 8px; 
+    margin-top: auto;
+    padding-top: 12px;
     font-weight: bold;
     color: var(--rose-fonce);
+    letter-spacing: 0.08em;
+    font-size: 1.6rem;
+
+    text-shadow: 0 0 8px color-mix(in srgb, var(--rose-fonce) 60%, transparent);
 }
+
 
 .menu-item:hover {
-    transform: translateY(-3px) scale(1.01); 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 0 15px var(--rose-fonce);
-    border-color: var(--rose-pale);
+    transform: translateY(-4px) scale(1.015);
+    border-color: color-mix(in srgb, var(--rose-fonce) 60%, var(--rose-fonce));
+    box-shadow:
+        0 0 18px color-mix(in srgb, var(--rose-fonce) 70%, transparent),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
+.menu-item:hover::after {
+    opacity: 0.45;
+    transform: translate(10px, -10px) scale(1.2);
+}
 
-/* --- MEDIA QUERIES --- */
+/* ─── MEDIA QUERIES ──────────────────────────────── */
 
 @media (min-width: 576px) {
     .menu-list {
@@ -85,7 +195,61 @@
 
 @media (min-width: 992px) {
     .menu-list {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr; 
         gap: var(--espace-grand);
+        max-width: 1080px; 
+        margin: 0 auto;   
+    }
+
+    .menu-item {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: auto 1fr auto;
+        column-gap: var(--espace-grand);
+        row-gap: 15px;
+        align-items: center; 
+        text-align: left;
+        padding: 20px; 
+    }
+
+    .menu-content {
+        display: contents;
+    }
+
+    .menu-item img {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        width: 100%;
+        height: 100%;
+        min-height: 220px; 
+        max-height: 300px; 
+        object-fit: cover;
+        border-radius: var(--rayon);
+    }
+
+    .menu-item h3,
+    .menu-item h4 {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 2.2rem; 
+        margin-bottom: 0;
+    }
+
+    .menu-item p {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 1.2rem; 
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    .menu-item span {
+        grid-column: 2;
+        grid-row: 3;
+        font-size: 2.8rem; 
+        justify-self: end; 
+        align-self: end;   
+        padding-top: 0;    
+        line-height: 1;
     }
 }
