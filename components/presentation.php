@@ -1,6 +1,6 @@
 <section class="presentation">
 
-    <h2>Izakaya Hiroshi</h2>
+    <h2 data-text="Izakaya Hiroshi">Izakaya Hiroshi</h2>
 
     <p class="presentation-texte">
         Originaire de Tokyo, il a grandi en apprenant les techniques
