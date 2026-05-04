@@ -56,9 +56,9 @@
 /* MENU */
 
 .menu-icon {
-    position: absolute;
+    position: fixed;
     top: var(--largeur-ligne);
-    left: var(--espacement-grand);
+    left: 2.2em;
     scale: var(--echelle-icon);
     color: var(--texte-couleur-blanc);
     cursor: pointer;
@@ -66,8 +66,22 @@
 }
 
 .menu-icon:hover {
-    color: var(--rose-pale);
+    color: var(--rose-fonce);
     transform: scale(var(--echelle-hover));
+    transition: 0.2s;
+}
+
+#logo {
+    position: fixed;
+    top: var(--largeur-ligne);
+    right: 2.2em;
+    width: 100px;
+    height: auto;
+    z-index: 10;
+}
+
+#logo:hover {
+    transform: scale(1.1);
     transition: 0.2s;
 }
 
