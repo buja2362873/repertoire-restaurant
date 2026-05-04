@@ -4,7 +4,7 @@
 
     <div class="titre-deco">
         <span></span>
-        <h2 data-glitch="Nos spécialités">Nos spécialités</h2>
+        <h2 data-text="Nos spécialités">Nos spécialités</h2>
         <span></span>
     </div>
     <p class="specialites-tagline">料理の芸術 — L'art de la table revisité</p>

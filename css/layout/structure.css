@@ -6,3 +6,23 @@
     justify-content: center;
     align-items: center;
 }
+
+/*[ UTILITAIRES DE TITRE ]*/
+.titre-bleu-pale,
+.titre-rose-fonce {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    position: relative;
+}
+
+.titre-bleu-pale {
+    color: var(--titre-couleur-bleu-pale);
+    text-shadow: var(--titre-shadow-bleu-pale);
+}
+
+.titre-rose-fonce {
+    color: var(--titre-couleur-rose-fonce);
+    text-shadow: var(--titre-shadow-rose-fonce);
+}

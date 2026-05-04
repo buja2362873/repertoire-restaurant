@@ -33,7 +33,7 @@
 .promo h2 {
     font-size: var(--taille-police-titre-special);
     font-weight: bold;
-    color: var(--rose-fonce);
+    color: var(--titre-couleur-rose-fonce);
 }
 
 .promo p {

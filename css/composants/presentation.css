@@ -1,6 +1,5 @@
 .presentation {
     position: relative;
-    /* IMPORTANT */
     text-align: center;
     padding: var(--espace-grand);
     background: var(--gris-fonce);
@@ -23,10 +22,42 @@
 }
 
 .presentation h2 {
-    font-size: var(--texte-titre);
-    color: var(--rose-fonce);
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    color: var(--titre-couleur-bleu-pale);
+    text-shadow: var(--titre-shadow-bleu-pale);
+
     margin-bottom: var(--espace-moyen);
+
+    position: relative;
+    display: inline-block;
 }
+
+.presentation h2::before,
+.presentation h2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: glitch 4s infinite;
+}
+
+.presentation h2::before {
+    color: var(--titre-couleur-rose-fonce); 
+    clip-path: polygon(0 30%, 100% 30%, 100% 45%, 0 45%);
+    animation-delay: 0.3s;
+}
+
+.presentation h2::after {
+    color: var(--titre-couleur-rose-fonce); 
+    clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
+    animation-delay: 0.6s;
+}
+
 
 .presentation-texte {
     font-size: var(--texte-normal);
