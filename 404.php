@@ -22,26 +22,22 @@ $showImg = false;
 
     <main class="page-404" aria-label="Erreur 404">
 
-        <!-- Lignes de scan CRT -->
         <div class="scanlines" aria-hidden="true"></div>
 
         <div class="erreur-container">
 
-            <!-- Code erreur avec effet glitch -->
             <div class="erreur-code" aria-label="Erreur 404">
                 <span class="glitch" data-text="404">404</span>
             </div>
 
-            <!-- Titre -->
             <h1 class="erreur-titre">
                 <span class="typed-text">Connexion à la page impossible.</span>
             </h1>
 
-            <!-- Console système -->
             <div class="terminal-box" role="log" aria-label="Console système">
 
                 <p class="terminal-line">
-                    <span class="prompt">system@neo-kyoto:~$</span>
+                    <span class="prompt">system@hiroshi:~$</span>
                     accès page demandée
                 </p>
 
@@ -66,7 +62,7 @@ $showImg = false;
                 </p>
 
                 <p class="terminal-line delay-5">
-                    <span class="prompt">system@neo-kyoto:~$</span>
+                    <span class="prompt">system@hiroshi:~$</span>
                     statut --page
                 </p>
 
@@ -77,13 +73,12 @@ $showImg = false;
                 </p>
 
                 <p class="terminal-line delay-7">
-                    <span class="prompt">system@neo-kyoto:~$</span>
+                    <span class="prompt">system@hiroshi:~$</span>
                     _
                 </p>
 
             </div>
 
-            <!-- Citation style système -->
             <blockquote class="haiku">
                 <p>Signal interrompu.</p>
                 <p>Les néons s'éteignent.</p>
@@ -91,7 +86,6 @@ $showImg = false;
                 <footer>— Terminal central</footer>
             </blockquote>
 
-            <!-- Boutons -->
             <div class="btn-group">
                 <a href="index.php" class="btn-retour">
                     <span class="btn-icon">⌂</span>
@@ -101,7 +95,6 @@ $showImg = false;
 
         </div>
 
-        <!-- Décoration latérale droite -->
         <div class="deco-side" aria-hidden="true">
             <div class="neon-kanji">
                 <span>迷</span>
