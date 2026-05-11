@@ -4,10 +4,7 @@ $showImg = false;
 
 // Charger les données du menu depuis la base de données
 require_once 'functions/menu_loader.php';
-$sakeEtShoshu = getWinesByType('sake_et_shoshu');
-$vinBlanc = getWinesByType('vin_blanc');
-$vinRouge = getWinesByType('vin_rouge');
-$bieresEtSakePetillant = getWinesByType('bieres_japonaise_et_sake_petillant');
+$vins = getAllWines();
 ?>
 
 <!DOCTYPE html>
@@ -47,12 +44,18 @@ $bieresEtSakePetillant = getWinesByType('bieres_japonaise_et_sake_petillant');
                                 ?>
                                 <img src="<?php echo htmlspecialchars($wineImage); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
                             <?php endif; ?>
-                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
-                            <?php if (!empty($item['type'])): ?>
-                                <p><?php echo htmlspecialchars($item['type']); ?></p>
-                            <?php endif; ?>
-                            <p><?php echo htmlspecialchars($item['country']); ?></p>
-                            <span><?php echo htmlspecialchars($item['price']); ?> $</span>
+                            <div class="menu-content">
+                                <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                                <div class="wine-meta">
+                                    <?php if (!empty($item['type'])): ?>
+                                        <p class="wine-type"><?php echo htmlspecialchars($item['type']); ?></p>
+                                    <?php endif; ?>
+                                    <?php if (!empty($item['country'])): ?>
+                                        <p class="wine-country"><?php echo htmlspecialchars($item['country']); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <span><?php echo htmlspecialchars($item['price']); ?> $</span>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>

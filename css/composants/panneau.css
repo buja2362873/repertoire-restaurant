@@ -81,7 +81,7 @@
 .nav-close{
     position: absolute;
     top: var(--largeur-ligne);
-    left: var(--espacement-grand);
+    left: 2.2em;
     scale: var(--echelle-icon);
     cursor: pointer;
     color: var(--texte-couleur-blanc);

@@ -38,9 +38,14 @@ $vegetarien = getMenuByType('plats_vegetarien');
                 <?php if (!empty($sushis)): ?>
                     <?php foreach ($sushis as $item): ?>
                         <div class="menu-item">
-                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
-                            <p><?php echo htmlspecialchars($item['description']); ?></p>
-                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            <?php
+                            ?>
+                            <img src="<?php echo htmlspecialchars($item['image_url']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                            <div class="menu-content">
+                                <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                                <p><?php echo htmlspecialchars($item['description']); ?></p>
+                                <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -57,9 +62,14 @@ $vegetarien = getMenuByType('plats_vegetarien');
                 <?php if (!empty($grillades)): ?>
                     <?php foreach ($grillades as $item): ?>
                         <div class="menu-item">
-                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
-                            <p><?php echo htmlspecialchars($item['description']); ?></p>
-                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            <?php
+                            ?>
+                            <img src="<?php echo htmlspecialchars($item['image_url']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                            <div class="menu-content">
+                                <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                                <p><?php echo htmlspecialchars($item['description']); ?></p>
+                                <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -76,9 +86,14 @@ $vegetarien = getMenuByType('plats_vegetarien');
                 <?php if (!empty($vegetarien)): ?>
                     <?php foreach ($vegetarien as $item): ?>
                         <div class="menu-item">
-                            <h4><?php echo htmlspecialchars($item['name']); ?></h4>
-                            <p><?php echo htmlspecialchars($item['description']); ?></p>
-                            <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            <?php
+                        ?>
+                        <img src="<?php echo htmlspecialchars($item['image_url']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                            <div class="menu-content">
+                                <h4><?php echo htmlspecialchars($item['name']); ?></h4>
+                                <p><?php echo htmlspecialchars($item['description']); ?></p>
+                                <span><?php echo htmlspecialchars($item['price']); ?>$</span>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
