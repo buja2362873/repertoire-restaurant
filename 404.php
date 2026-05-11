@@ -88,7 +88,6 @@ $showImg = false;
 
             <div class="btn-group">
                 <a href="index.php" class="btn-retour">
-                    <span class="btn-icon">⌂</span>
                     Retour à l'accueil
                 </a>
             </div>

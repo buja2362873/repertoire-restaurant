@@ -8,8 +8,8 @@
     --404-btn:        var(--boutton-couleur);
     --404-texte:      var(--texte-couleur-blanc);
     --404-text-dim:    #5a4f6a;                
-    --404-font-cyber:  'Orbitron', monospace;
-    --404-font-mono:   'Share Tech Mono', monospace;
+    --404-font-cyber:  var(--font-heading);
+    --404-font-mono:   var(--font-body);
 }
 
 /* ---------- Reset page 404 ---------- */
@@ -286,7 +286,7 @@
 }
 
 .neon-kanji span {
-    font-family: 'Noto Serif JP', serif;
+    font-family: var(--font-japanese);
     font-size: 1.8rem;
     color: var(--404-rose);
     text-shadow: 0 0 10px var(--404-rose), 0 0 25px rgba(253, 39, 186, 0.5);

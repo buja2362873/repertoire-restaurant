@@ -84,4 +84,9 @@
     --texte-moyen: 20px;
     --texte-grand: 24px;
     --texte-titre: var(--taille-grande);
+
+    /*[ POLICES ]*/
+    --font-heading: 'Kimochi', sans-serif;
+    --font-body: 'RadetsMedium', sans-serif;
+    --font-japanese: 'NotoSansJP', sans-serif;
 }
