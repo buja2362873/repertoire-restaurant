@@ -15,20 +15,6 @@
     border-bottom: var(--epaisseur-bordure) solid var(--bleu-pale);
 }
 
-/* Effet scanlines cyberpunk */
-.promo::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 245, 255, 0.03) 2px,
-            rgba(0, 245, 255, 0.03) 4px);
-    pointer-events: none;
-    z-index: 0;
-}
-
 /* Glow décoratif */
 .promo::after {
     content: '';
@@ -91,29 +77,29 @@
 }
 
 .promo-bouton {
-    display: inline-block;
-    padding: 14px 32px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.6rem;
+     padding: var(--space-sm) var(--space-xl);
 
-    font-family: var(--font-heading);
-    font-size: var(--texte-normal);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
+     font-family: var(--font-heading);
+     font-size: var(--texte-normal);
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     text-decoration: none;
 
-    color: var(--texte-couleur-blanc);
-    background: rgba(253, 39, 186, 0.12);
+     color: var(--texte-couleur-blanc);
+     background: rgba(253, 39, 186, 0.12);
 
-    border: var(--epaisseur-bordure) solid var(--rose-fonce);
-    border-radius: var(--rayon);
+     border: var(--border-strong) solid var(--rose-fonce);
+     border-radius: var(--radius);
 
-    box-shadow:
-        0 0 10px rgba(253, 39, 186, 0.5),
-        inset 0 0 10px rgba(253, 39, 186, 0.2);
+     box-shadow:
+         0 0 10px rgba(253, 39, 186, 0.5),
+         inset 0 0 10px rgba(253, 39, 186, 0.2);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+     transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
 }
 
 .promo-bouton:hover {

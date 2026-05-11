@@ -128,7 +128,7 @@
 
 .newsletter-form input:focus {
     border-color: var(--neon-cyan);
-    box-shadow: 0 0 12px var(--cy);
+    box-shadow: 0 0 12px var(--cyan);
 }
 
 .newsletter-form button {

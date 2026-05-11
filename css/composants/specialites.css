@@ -5,18 +5,7 @@
     position: relative;
     overflow: hidden;
 }
-/* Texture */
-.specialites::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(0, 245, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 245, 255, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-}
+
 .specialites > * {
     position: relative;
     z-index: 1;
