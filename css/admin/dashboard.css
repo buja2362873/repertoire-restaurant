@@ -118,12 +118,45 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espacement-moyen);
 }
 
 .admin-page-title {
     font-size: var(--texte-grand);
     margin: 0;
     font-weight: bold;
+}
+
+.admin-header-actions {
+    display: flex;
+    gap: var(--espacement-petit);
+    align-items: center;
+}
+
+.admin-header-actions a,
+.admin-header-actions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.admin-btn-secondary {
+    padding: 10px 16px;
+    background: rgba(100, 149, 237, 0.3);
+    color: var(--bleu-pale);
+    border: 1px solid var(--bleu-pale);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--texte-sm);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.admin-btn-secondary:hover {
+    background: rgba(100, 149, 237, 0.5);
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.3);
 }
 
 .admin-content {

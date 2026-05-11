@@ -70,9 +70,17 @@ if ($selectedTable) {
         <main class="admin-main">
             <header class="admin-header">
                 <h1 class="admin-page-title"><?php echo $selectedTable ? ucfirst(htmlspecialchars($selectedTable)) : 'Dashboard'; ?></h1>
-                <?php if ($selectedTable): ?>
-                    <button class="admin-btn-primary" id="addNewBtn">Add New</button>
-                <?php endif; ?>
+                <div class="admin-header-actions">
+                    <?php if ($selectedTable): ?>
+                        <button class="admin-btn-primary" id="addNewBtn">Add New</button>
+                        <?php if ($selectedTable === 'reservations'): ?>
+                            <a href="export.php?table=reservations" class="admin-btn-secondary" download>
+                                <span class="material-symbols-outlined">download</span>
+                                Export CSV
+                            </a>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </header>
 
             <div class="admin-content">
