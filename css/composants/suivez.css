@@ -69,30 +69,6 @@
     animation-delay: 0.6s;
 }
 
-@keyframes glitch {
-
-    0%,
-    90%,
-    100% {
-        opacity: 0;
-        transform: none;
-    }
-
-    91% {
-        opacity: 1;
-        transform: translateX(-3px);
-    }
-
-    93% {
-        opacity: 1;
-        transform: translateX(3px);
-    }
-
-    95% {
-        opacity: 0;
-    }
-}
-
 .divider {
     display: flex;
     align-items: center;

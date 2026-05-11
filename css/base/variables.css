@@ -9,6 +9,12 @@
     --espacement-petit: 10px;
     --espacement-moyen: 20px;
     --espacement-grand: 30px;
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 30px;
+    --space-xl: 48px;
 
     /*[ POLICES ]*/
     --taille-police-erreur: 80px;
@@ -54,6 +60,7 @@
     --rose-fonce: #FD27BA;
     --rose-pale: #FC7AD3;
     --cyan: #0C748D;
+    --cy: var(--cyan);
     --neon-cyan: #00f5ff;
     --neon-rose: #ff2d78;
 
@@ -66,6 +73,9 @@
     /*[ TEXTE ]*/
     --texte-couleur-blanc: #F9F8F1;
     --texte-couleur-noir: #0B070E;
+    --text-muted: rgba(249, 248, 241, 0.72);
+    --white-soft: rgba(249, 248, 241, 0.92);
+    --blanc-casse: #efe9de;
 
     /*[ BOUTON ]*/
     --boutton-couleur: #FD27BA;
@@ -73,9 +83,17 @@
 
     /*[ UI ]*/
     --rayon: var(--taille-petite);
+    --radius: var(--rayon);
     --espace-petit: var(--taille-petite);
     --espace-moyen: var(--taille-base);
     --espace-grand: var(--taille-grande);
+    --border-strong: 1px;
+    --transition-base: 0.3s ease;
+    --transition-fast: 0.2s ease;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.18);
+    --shadow-glow: 0 0 20px rgba(33, 221, 222, 0.24);
+    --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.24);
+    --texture-opacity: 0.03;
 
     /*[ TYPOGRAPHIE ]*/
     --texte-xs: 12px;
