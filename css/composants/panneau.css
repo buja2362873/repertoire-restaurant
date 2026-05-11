@@ -40,6 +40,7 @@
     letter-spacing: var(--espacement-lettre);
     padding: var(--espacement-moyen);
     display: inline-block;
+    font-family: var(--font-heading);
 
     opacity: 0;
     transition: 
