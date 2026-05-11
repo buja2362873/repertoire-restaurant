@@ -82,8 +82,8 @@
 .nav-close{
     position: absolute;
     top: var(--largeur-ligne);
-    left: 2.2em;
-    scale: var(--echelle-icon);
+    left: 3em;
+    transform: scale(2.5);
     cursor: pointer;
     color: var(--texte-couleur-blanc);
     transition: 0.2s;
@@ -91,7 +91,7 @@
 
 .nav-close:hover{
     color: var(--rose-fonce);
-    transform: rotate(var(--rotation-fermeture)) scale(var(--echelle-hover));
+    transform: rotate(var(--rotation-fermeture));
 }
 
 /* MEDIA QUERIES */
