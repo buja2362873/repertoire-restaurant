@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . '/../functions/db_loader.php';
+
+// Get opening hours from database
+$heures = getHeuresOuverture();
+?>
 <footer class="footer">
 
     <div class="footer-contenu">
@@ -13,9 +19,13 @@
         <div class="footer-heures">
             <h3>Heure d'ouverture</h3>
 
-            <p><strong>Lun – Jeu :</strong> 17h – 22h</p>
-            <p><strong>Ven – Sam :</strong> 17h – 23h</p>
-            <p><strong>Dim :</strong> Fermé</p>
+            <?php foreach ($heures as $heure): ?>
+                <?php if ($heure['heure_ouverture'] === 'Fermé'): ?>
+                    <p><strong><?php echo htmlspecialchars($heure['jour']); ?> :</strong> <?php echo htmlspecialchars($heure['heure_ouverture']); ?></p>
+                <?php else: ?>
+                    <p><strong><?php echo htmlspecialchars($heure['jour']); ?> :</strong> <?php echo htmlspecialchars($heure['heure_ouverture']); ?> – <?php echo htmlspecialchars($heure['heure_fermeture']); ?></p>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
 
         <div class="footer-ligne"></div>
@@ -37,7 +47,7 @@
 
             <p class="footer-liens">
                 <a href="index.php">• Accueil</a>
-                <a href="#">• Réservations</a>
+                <a href="reservations.php">• Réservations</a>
                 <a href="#">• Politique de confidentialité</a>
             </p>
 
