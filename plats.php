@@ -3,7 +3,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 $showImg = false;
 
 // Charger les données du menu depuis la base de données
-require_once 'functions/menu_loader.php';
+require_once 'functions/db_loader.php';
 $sushis = getMenuByType('plats_principaux_sushis');
 $grillades = getMenuByType('plats_principaux_grillades');
 $vegetarien = getMenuByType('plats_vegetarien');
